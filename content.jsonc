@@ -998,10 +998,5 @@
       "icon": "icon/eaglercraft1.12.png",
       "url": "games/eaglercraft1.12/"
     } 
-    {
-      "name": "MFR",
-      "icon": "icon-192x192-maskable.png",
-      "url": "games/myfemboyroomate/"
-    },
   ]
 }
