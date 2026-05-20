@@ -1,2 +1,2 @@
-# (https://satorugojo696.github.io/SatoruGojo696/)
+# Satoru's Site
 Sponsered by Vertex III
