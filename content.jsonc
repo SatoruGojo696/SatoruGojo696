@@ -997,6 +997,11 @@
       "name": "Minecraft 1.12.2",
       "icon": "icon/eaglercraft1.12.png",
       "url": "games/eaglercraft1.12/"
-    } 
+    },
+    {
+      "name": "My Femboy Roomate",
+      "icon": "icon/myfemboyroomate.png",
+      "url": "games/myfemboyroomate/"
+    },
   ]
 }
