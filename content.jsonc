@@ -989,9 +989,9 @@
       "url": "$FLASH/papassushiria.swf"
     },
     {
-      "name": "Papa's Freezeria",
-      "icon": "icon/papasfreezeria.png",
-      "url": "$FLASH/papasfreezeria.swf"
+      "name": "My Femboy Roomate",
+      "icon": "icon/myfemboyroomate.png",
+      "url": "games/myfemboyroomate"
     },
     {
       "name": "Minecraft 1.12.2",
