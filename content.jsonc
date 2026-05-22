@@ -974,9 +974,9 @@
       "url": "$FLASH/1o1tennis.swf"
     },
     {
-      "name": "1 On 1 Soccer",
-      "icon": "icon/1o1soccer.png",
-      "url": "$FLASH/1o1soccer.swf"
+      "name": "Coffin of A-L",
+      "icon": "icon/Coffin.png",
+      "url": "games/thecoffinofandyandleyley"
     },
     {
       "name": "10 Minutes Till Dawn",
