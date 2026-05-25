@@ -656,7 +656,7 @@
     {
       "name": "Celeste PICO",
       "icon": "icon/celestepico.png",
-      "url": "games/celestepico/"
+      "url": "games/celestepico/index.html"
     },
     {
       "name": "Block Blast",
@@ -974,8 +974,8 @@
       "url": "$FLASH/1o1tennis.swf"
     },
     {
-      "name": "Coffin of A-L",
-      "icon": "icon/Coffin.png",
+      "name": "Coffin of Andrew and Leyley",
+      "icon": "icon/thecoffinofandyandleyley.png",
       "url": "games/thecoffinofandyandleyley"
     },
     {
