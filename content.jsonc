@@ -969,9 +969,9 @@
       "url": "https://slicey64.github.io/2048/"
     },
     {
-      "name": "1 On 1 Tennis",
-      "icon": "icon/1o1tennis.png",
-      "url": "$FLASH/1o1tennis.swf"
+      "name": "Kitsune",
+      "icon": "icon/Question.jpg",
+      "url": "games/google-kitsune"
     },
     {
       "name": "Coffin of Andrew and Leyley",
@@ -984,9 +984,9 @@
       "url": "https://xoriushourz.github.io/10-Minutes-Till-Dawn/"
     },
     {
-      "name": "Papa's Sushiria",
-      "icon": "icon/papassushiria.png",
-      "url": "$FLASH/papassushiria.swf"
+      "name": "Fnaf",
+      "icon": "icon/FNAF,imgae.png",
+      "url": "games/FNAF"
     },
     {
       "name": "My Femboy Roomate",
