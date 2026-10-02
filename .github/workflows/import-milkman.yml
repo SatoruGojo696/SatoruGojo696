@@ -1,0 +1,49 @@
+name: Import Milkman Karlson
+
+on:
+  push:
+    paths:
+      - ".github/workflows/import-milkman.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-game:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out my site
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Download the authorized web port
+        run: |
+          git clone --depth 1 https://github.com/genizy/web-port.git /tmp/web-port
+
+      - name: Copy Milkman Karlson
+        run: |
+          rm -rf games/milkman-karlson
+          mkdir -p games/milkman-karlson
+          cp -R /tmp/web-port/milkman-karlson/. games/milkman-karlson/
+
+      - name: Make the game self-contained
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path("games/milkman-karlson/index.html")
+          s = p.read_text()
+          s = s.replace('<base href="https://cdn.jsdelivr.net/gh/genizy/web-port@main/milkman-karlson/">',
+                        '<base href="./">')
+          p.write_text(s)
+          PY
+
+      - name: Commit the imported game
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add games/milkman-karlson
+          git diff --cached --quiet && exit 0
+          git commit -m "Add Milkman Karlson web port"
+          git push
