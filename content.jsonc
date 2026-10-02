@@ -5,6 +5,12 @@
 {
   "games": [
     {
+      "name": "Milkman Karlson",
+      "icon": "icon/milkman-karlson.svg",
+      "url": "games/milkman-karlson/",
+      "new": "true"
+    },
+    {
       "name": "Cut The Rope: Time Travel",
       "icon": "icon/cuttheropetimetravel.png",
       "url": "games/cuttheropetimetravel/",
