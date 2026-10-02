@@ -18,98 +18,171 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Download my web-port fork
-        run: git clone --depth 1 https://github.com/SatoruGojo696/web-port.git /tmp/web-port
+      - name: Download game sources
+        run: |
+          git clone --depth 1 https://github.com/SatoruGojo696/web-port.git /tmp/web-port
+          git clone --depth 1 https://github.com/SatoruGojo696/supercoolsite.git /tmp/supercoolsite
+          git clone --depth 1 https://github.com/SatoruGojo696/Gameports-site.git /tmp/Gameports-site
 
       - name: Create local HTML launchers
         env:
-          SOURCE_COMMIT: a8bea5fd11f88e5a9192857f434e299c40efe7e6
+          WEB_PORT_COMMIT: a8bea5fd11f88e5a9192857f434e299c40efe7e6
+          SUPERCOOL_COMMIT: 0932d9e90bedb04e308d9ba23aab6a535a25af9c
+          GAMEPORTS_COMMIT: 76820768ff9dade5bb0c097838ba63a6c944cb9c
         run: |
           python3 - <<'PY'
           from pathlib import Path
           import os
+          import re
 
-          commit = os.environ["SOURCE_COMMIT"]
-          cdn = f"https://cdn.jsdelivr.net/gh/SatoruGojo696/web-port@{commit}/"
-
-          games = {
-              "amanda-the-adventurer": ("Amanda The Adventurer", "amanda-the-adventurer/index.html"),
-              "andys-apple-farm": ("Andy's Apple Farm", "andys-apple-farm/index.html"),
-              "baldi-plus": ("Baldi's Basics Plus", "baldi-plus/index.html"),
-              "baldi-remaster": ("Baldi's Basics Classic Remastered", "baldi-remaster/index.html"),
-              "bendy": ("Bendy and The Ink Machine", "bendy/index.html"),
-              "bergentruck": ("BERGENTRUCK 201x", "bergentruck/BERGENTRUCK_201X.html"),
-              "deltatraveler": ("Deltatraveler", "deltatraveler/index.html"),
-              "donottakethiscathome": ("Do NOT Take This Cat Home", "donottakethiscathome/index.html"),
-              "fears-to-fathom": ("Fears to Fathom: Home Alone", "fears-to-fathom/home-alone/index.html"),
-              "happy-sheepies": ("Happy Sheepies", "happy-sheepies/index.html"),
-              "kindergarten": ("Kindergarten", "kindergarten/1/index.html"),
-              "milkman-karlson": ("Milkman Karlson", "milkman-karlson/index.html"),
-              "pizza-tower": ("Pizza Tower", "pizza-tower/index.html"),
-              "raft": ("RAFT", "raft/index.html"),
-              "slender": ("Slender: The Eight Pages", "slender/index.html"),
-              "sonic.exe": ("Sonic.exe", "sonic.exe/index.html"),
-              "speed-stars": ("Speed Stars", "speed-stars/index.html"),
-              "tattletail": ("Tattletail", "tattletail/index.html"),
-              "thats-not-my-neighbor": ("That's Not My Neighbor", "thats-not-my-neighbor/index.html"),
-              "undertale-yellow": ("Undertale Yellow", "undertale-yellow/index.html"),
-              "web-fishing": ("Web Fishing", "web-fishing/index.html"),
-              "witch-heart": ("Witch's Heart", "witch-heart/index.html"),
-              "yume-nikki": ("Yume Nikki", "yume-nikki/index.html"),
+          sources = {
+              "web-port": {
+                  "root": Path("/tmp/web-port"),
+                  "cdn": f"https://cdn.jsdelivr.net/gh/SatoruGojo696/web-port@{os.environ['WEB_PORT_COMMIT']}/",
+                  "games": {
+                      "amanda-the-adventurer": ("Amanda The Adventurer", "amanda-the-adventurer/index.html"),
+                      "andys-apple-farm": ("Andy's Apple Farm", "andys-apple-farm/index.html"),
+                      "baldi-plus": ("Baldi's Basics Plus", "baldi-plus/index.html"),
+                      "baldi-remaster": ("Baldi's Basics Classic Remastered", "baldi-remaster/index.html"),
+                      "bendy": ("Bendy and The Ink Machine", "bendy/index.html"),
+                      "bergentruck": ("BERGENTRUCK 201x", "bergentruck/BERGENTRUCK_201X.html"),
+                      "deltatraveler": ("Deltatraveler", "deltatraveler/index.html"),
+                      "donottakethiscathome": ("Do NOT Take This Cat Home", "donottakethiscathome/index.html"),
+                      "fears-to-fathom": ("Fears to Fathom: Home Alone", "fears-to-fathom/home-alone/index.html"),
+                      "happy-sheepies": ("Happy Sheepies", "happy-sheepies/index.html"),
+                      "kindergarten": ("Kindergarten", "kindergarten/1/index.html"),
+                      "milkman-karlson": ("Milkman Karlson", "milkman-karlson/index.html"),
+                      "pizza-tower": ("Pizza Tower", "pizza-tower/index.html"),
+                      "raft": ("RAFT", "raft/index.html"),
+                      "slender": ("Slender: The Eight Pages", "slender/index.html"),
+                      "sonic.exe": ("Sonic.exe", "sonic.exe/index.html"),
+                      "speed-stars": ("Speed Stars", "speed-stars/index.html"),
+                      "tattletail": ("Tattletail", "tattletail/index.html"),
+                      "thats-not-my-neighbor": ("That's Not My Neighbor", "thats-not-my-neighbor/index.html"),
+                      "undertale-yellow": ("Undertale Yellow", "undertale-yellow/index.html"),
+                      "web-fishing": ("Web Fishing", "web-fishing/index.html"),
+                      "witch-heart": ("Witch's Heart", "witch-heart/index.html"),
+                      "yume-nikki": ("Yume Nikki", "yume-nikki/index.html"),
+                  },
+              },
+              "supercoolsite": {
+                  "root": Path("/tmp/supercoolsite"),
+                  "cdn": f"https://cdn.jsdelivr.net/gh/SatoruGojo696/supercoolsite@{os.environ['SUPERCOOL_COMMIT']}/",
+                  "games": {
+                      "google-snake": ("Google Snake", "Google-snake/index.html"),
+                      "ovo": ("OVO", "OVO/index.html"),
+                      "chrome-dino": ("Chrome Dino", "chrome-dino/index.html"),
+                      "duck-life-1": ("Duck Life 1", "duck-life-1/index.html"),
+                      "hextris": ("Hextris", "hextris/index.html"),
+                      "learn-to-fly": ("Learn to Fly", "learn-to-fly/index.html"),
+                      "learn-to-fly-3": ("Learn to Fly 3", "learn-to-fly-3/index.html"),
+                      "papas-burgeria": ("Papa's Burgeria", "papas-burgeria/index.html"),
+                      "papas-cheeseria": ("Papa's Cheeseria", "papas-cheeseria/index.html"),
+                      "papas-cupcakeria": ("Papa's Cupcakeria", "papas-cupcakeria/index.html"),
+                      "papas-freezeria": ("Papa's Freezeria", "papas-freezeria/index.html"),
+                      "papas-pancakeria": ("Papa's Pancakeria", "papas-pancakeria/index.html"),
+                      "papas-pastaria": ("Papa's Pastaria", "papas-pastaria/index.html"),
+                      "papas-pizzeria": ("Papa's Pizzeria", "papas-pizzeria/index.html"),
+                      "papas-scooperia": ("Papa's Scooperia", "papas-scooperia/index.html"),
+                      "papas-sushiria": ("Papa's Sushiria", "papas-sushiria/index.html"),
+                      "run-2": ("Run 2", "run-2/index.html"),
+                      "flappy-birb": ("Flappy Birb", "flappy-birb/index.html"),
+                      "impossible-quiz": ("The Impossible Quiz", "impossiblequiz/index.html"),
+                      "riddle-school-1": ("Riddle School 1", "riddle-school-1/index.html"),
+                      "riddle-school-2": ("Riddle School 2", "riddle-school-2/index.html"),
+                  },
+              },
+              "Gameports-site": {
+                  "root": Path("/tmp/Gameports-site"),
+                  "cdn": f"https://cdn.jsdelivr.net/gh/SatoruGojo696/Gameports-site@{os.environ['GAMEPORTS_COMMIT']}/",
+                  "games": {
+                      "undertale": ("Undertale", "Undertale/index.html"),
+                      "hollowknight": ("Hollow Knight", "hollowknight/index.html"),
+                  },
+              },
           }
 
-          for slug, (title, source_path) in games.items():
-              src = Path("/tmp/web-port") / source_path
-              if not src.exists():
-                  print(f"Skipping {slug}: missing {source_path}")
-                  continue
+          created = {}
+          for source_name, source in sources.items():
+              for slug, (title, source_path) in source["games"].items():
+                  src = source["root"] / source_path
+                  if not src.exists():
+                      print(f"Skipping {slug}: missing {source_path} in {source_name}")
+                      continue
 
-              out = Path("games") / slug / "index.html"
-              out.parent.mkdir(parents=True, exist_ok=True)
+                  out = Path("games") / slug / "index.html"
+                  out.parent.mkdir(parents=True, exist_ok=True)
 
-              html = src.read_text(encoding="utf-8")
-              source_dir = source_path.rsplit("/", 1)[0] + "/"
-              base = cdn + source_dir
+                  html = src.read_text(encoding="utf-8")
+                  source_dir = source_path.rsplit("/", 1)[0] + "/"
+                  base = source["cdn"] + source_dir
 
-              import re
-              if re.search(r"<base\\s", html, re.I):
-                  html = re.sub(r"<base\\s+[^>]*>", f'<base href="{base}">', html, count=1, flags=re.I)
-              else:
-                  html = re.sub(r"<head([^>]*)>", f'<head\\1><base href="{base}">', html, count=1, flags=re.I)
+                  if re.search(r"<base\s", html, re.I):
+                      html = re.sub(r"<base\s+[^>]*>", f'<base href="{base}">', html, count=1, flags=re.I)
+                  else:
+                      html = re.sub(r"<head([^>]*)>", f'<head\1><base href="{base}">', html, count=1, flags=re.I)
 
-              out.write_text(html, encoding="utf-8")
-              print(f"Created {out} -> {base}")
+                  out.write_text(html, encoding="utf-8")
+                  created[slug] = title
+                  print(f"Created {out} -> {base}")
 
-          # Remove the stale launcher for a game that does not exist in the source fork.
-          stale = Path("games/undertale/index.html")
-          if stale.exists():
-              stale.unlink()
-              try:
-                  stale.parent.rmdir()
-              except OSError:
-                  pass
+          print(f"Created {len(created)} launchers.")
           PY
 
-      - name: Fix homepage entries for the web-port games
+      - name: Add missing game cards to the homepage
         run: |
           python3 - <<'PY'
           from pathlib import Path
+
           p = Path("content.jsonc")
           s = p.read_text(encoding="utf-8")
 
-          # Remove the nonexistent Undertale entry from the web-port block.
-          import re
-          s = re.sub(
-              r'\s*\{\s*"name": "Undertale",\s*"icon": "icon/web-port\.svg",\s*"url": "games/undertale/"\s*\},',
-              '',
-              s,
-              count=1
-          )
+          cards = [
+              ("Google Snake", "google-snake"),
+              ("OVO", "ovo"),
+              ("Chrome Dino", "chrome-dino"),
+              ("Duck Life 1", "duck-life-1"),
+              ("Hextris", "hextris"),
+              ("Learn to Fly", "learn-to-fly"),
+              ("Learn to Fly 3", "learn-to-fly-3"),
+              ("Papa's Burgeria", "papas-burgeria"),
+              ("Papa's Cheeseria", "papas-cheeseria"),
+              ("Papa's Cupcakeria", "papas-cupcakeria"),
+              ("Papa's Freezeria", "papas-freezeria"),
+              ("Papa's Pancakeria", "papas-pancakeria"),
+              ("Papa's Pastaria", "papas-pastaria"),
+              ("Papa's Pizzeria", "papas-pizzeria"),
+              ("Papa's Scooperia", "papas-scooperia"),
+              ("Papa's Sushiria", "papas-sushiria"),
+              ("Run 2", "run-2"),
+              ("Flappy Birb", "flappy-birb"),
+              ("The Impossible Quiz", "impossible-quiz"),
+              ("Riddle School 1", "riddle-school-1"),
+              ("Riddle School 2", "riddle-school-2"),
+              ("Undertale", "undertale"),
+              ("Hollow Knight", "hollowknight"),
+          ]
 
-          # Keep the existing Kindergarten card pointed at the working local launcher.
-          s = s.replace('"url": "games/kindergarten/"', '"url": "games/kindergarten/"', 1)
+          missing = []
+          for title, slug in cards:
+              if f'"url": "games/{slug}/"' not in s:
+                  missing.append(
+                      '    {\n'
+                      f'      "name": "{title}",\n'
+                      '      "icon": "icon/web-port.svg",\n'
+                      f'      "url": "games/{slug}/",\n'
+                      '      "new": "true"\n'
+                      '    }'
+                  )
+
+          if missing:
+              marker = '\n  ]\n}'
+              if marker not in s:
+                  raise SystemExit("Could not find the end of the games array in content.jsonc")
+              s = s.replace(marker, ',\n' + ',\n'.join(missing) + marker, 1)
 
           p.write_text(s, encoding="utf-8")
+          print(f"Added {len(missing)} new homepage cards.")
           PY
 
       - name: Commit and push
@@ -118,6 +191,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add games content.jsonc
           git diff --cached --quiet && exit 0
-          git commit -m "Fix web-port game launchers and paths"
+          git commit -m "Add more games from my game repositories"
           git pull --rebase origin main
           git push
