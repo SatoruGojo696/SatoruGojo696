@@ -18,132 +18,106 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Create lightweight game launchers
+      - name: Download my web-port fork
+        run: git clone --depth 1 https://github.com/SatoruGojo696/web-port.git /tmp/web-port
+
+      - name: Create local HTML launchers
         env:
           SOURCE_COMMIT: a8bea5fd11f88e5a9192857f434e299c40efe7e6
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          import html
-          import json
           import os
 
+          commit = os.environ["SOURCE_COMMIT"]
+          cdn = f"https://cdn.jsdelivr.net/gh/SatoruGojo696/web-port@{commit}/"
+
           games = {
-              "amanda-the-adventurer": "Amanda The Adventurer",
-              "andys-apple-farm": "Andy's Apple Farm",
-              "baldi-plus": "Baldi's Basics Plus",
-              "baldi-remaster": "Baldi's Basics Classic Remastered",
-              "bendy": "Bendy and The Ink Machine",
-              "bergentruck": "BERGENTRUCK 201x",
-              "deltatraveler": "Deltatraveler",
-              "donottakethiscathome": "Do NOT Take This Cat Home",
-              "fears-to-fathom": "Fears to Fathom: Home Alone",
-              "happy-sheepies": "Happy Sheepies",
-              "kindergarten": "Kindergarten 1 & 2",
-              "milkman-karlson": "Milkman Karlson",
-              "pizza-tower": "Pizza Tower",
-              "raft": "RAFT",
-              "slender": "Slender: The Eight Pages",
-              "sonic.exe": "Sonic.exe",
-              "speed-stars": "Speed Stars",
-              "tattletail": "Tattletail",
-              "thats-not-my-neighbor": "That's Not My Neighbor",
-              "the-man-in-the-window": "The Man From the Window",
-              "undertale": "Undertale",
-              "undertale-yellow": "Undertale Yellow",
-              "web-fishing": "Web Fishing",
-              "witch-heart": "Witch's Heart",
-              "yume-nikki": "Yume Nikki",
+              "amanda-the-adventurer": ("Amanda The Adventurer", "amanda-the-adventurer/index.html"),
+              "andys-apple-farm": ("Andy's Apple Farm", "andys-apple-farm/index.html"),
+              "baldi-plus": ("Baldi's Basics Plus", "baldi-plus/index.html"),
+              "baldi-remaster": ("Baldi's Basics Classic Remastered", "baldi-remaster/index.html"),
+              "bendy": ("Bendy and The Ink Machine", "bendy/index.html"),
+              "bergentruck": ("BERGENTRUCK 201x", "bergentruck/BERGENTRUCK_201X.html"),
+              "deltatraveler": ("Deltatraveler", "deltatraveler/index.html"),
+              "donottakethiscathome": ("Do NOT Take This Cat Home", "donottakethiscathome/index.html"),
+              "fears-to-fathom": ("Fears to Fathom: Home Alone", "fears-to-fathom/home-alone/index.html"),
+              "happy-sheepies": ("Happy Sheepies", "happy-sheepies/index.html"),
+              "kindergarten": ("Kindergarten", "kindergarten/1/index.html"),
+              "milkman-karlson": ("Milkman Karlson", "milkman-karlson/index.html"),
+              "pizza-tower": ("Pizza Tower", "pizza-tower/index.html"),
+              "raft": ("RAFT", "raft/index.html"),
+              "slender": ("Slender: The Eight Pages", "slender/index.html"),
+              "sonic.exe": ("Sonic.exe", "sonic.exe/index.html"),
+              "speed-stars": ("Speed Stars", "speed-stars/index.html"),
+              "tattletail": ("Tattletail", "tattletail/index.html"),
+              "thats-not-my-neighbor": ("That's Not My Neighbor", "thats-not-my-neighbor/index.html"),
+              "undertale-yellow": ("Undertale Yellow", "undertale-yellow/index.html"),
+              "web-fishing": ("Web Fishing", "web-fishing/index.html"),
+              "witch-heart": ("Witch's Heart", "witch-heart/index.html"),
+              "yume-nikki": ("Yume Nikki", "yume-nikki/index.html"),
           }
 
-          commit = os.environ["SOURCE_COMMIT"]
-          icon = "icon/web-port.svg"
+          for slug, (title, source_path) in games.items():
+              src = Path("/tmp/web-port") / source_path
+              if not src.exists():
+                  print(f"Skipping {slug}: missing {source_path}")
+                  continue
 
-          launcher = '''<!doctype html>
-          <html lang="en">
-          <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width,initial-scale=1">
-            <title>__TITLE__</title>
-            <style>
-              html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#000}
-              iframe{display:block;width:100%;height:100%;border:0}
-              #error{display:none;color:#fff;font:16px system-ui;padding:24px}
-            </style>
-          </head>
-          <body>
-            <div id="error"></div>
-            <iframe id="game" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>
-            <script>
-              (async () => {
-                const slug = "__SLUG__";
-                const commit = "__COMMIT__";
-                const source = `https://cdn.jsdelivr.net/gh/SatoruGojo696/web-port@${commit}/${slug}/index.html`;
-                const base = `https://cdn.jsdelivr.net/gh/SatoruGojo696/web-port@${commit}/${slug}/`;
-                const error = document.getElementById("error");
-                try {
-                  const response = await fetch(source, {cache:"no-store"});
-                  if (!response.ok) throw new Error("HTTP " + response.status);
-                  let html = await response.text();
-                  if (/<base\\s/i.test(html)) {
-                    html = html.replace(/<base\\s+[^>]*>/i, `<base href="${base}">`);
-                  } else {
-                    html = html.replace(/<head([^>]*)>/i, `<head$1><base href="${base}">`);
-                  }
-                  const blob = new Blob([html], {type:"text/html"});
-                  document.getElementById("game").src = URL.createObjectURL(blob);
-                } catch (e) {
-                  error.style.display = "block";
-                  error.textContent = "GAME FAILED TO LOAD: " + e.message;
-                }
-              })();
-            </script>
-          </body>
-          </html>
-          '''
+              out = Path("games") / slug / "index.html"
+              out.parent.mkdir(parents=True, exist_ok=True)
 
-          entries = []
-          for slug, title in games.items():
-              folder = Path("games") / slug
-              folder.mkdir(parents=True, exist_ok=True)
-              page = launcher.replace("__TITLE__", html.escape(title)).replace("__COMMIT__", commit).replace("__SLUG__", slug)
-              (folder / "index.html").write_text(page, encoding="utf-8")
-              entries.append({
-                  "name": title,
-                  "icon": icon,
-                  "url": f"games/{slug}/"
-              })
+              html = src.read_text(encoding="utf-8")
+              source_dir = source_path.rsplit("/", 1)[0] + "/"
+              base = cdn + source_dir
 
+              import re
+              if re.search(r"<base\\s", html, re.I):
+                  html = re.sub(r"<base\\s+[^>]*>", f'<base href="{base}">', html, count=1, flags=re.I)
+              else:
+                  html = re.sub(r"<head([^>]*)>", f'<head\\1><base href="{base}">', html, count=1, flags=re.I)
+
+              out.write_text(html, encoding="utf-8")
+              print(f"Created {out} -> {base}")
+
+          # Remove the stale launcher for a game that does not exist in the source fork.
+          stale = Path("games/undertale/index.html")
+          if stale.exists():
+              stale.unlink()
+              try:
+                  stale.parent.rmdir()
+              except OSError:
+                  pass
+          PY
+
+      - name: Fix homepage entries for the web-port games
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
           p = Path("content.jsonc")
           s = p.read_text(encoding="utf-8")
 
-          for e in entries:
-              marker = f'"name": "{e["name"]}"'
-              while marker in s:
-                  marker_pos = s.index(marker)
-                  start = s.rfind("    {", 0, marker_pos)
-                  end = s.index("    }", marker_pos) + len("    }")
-                  if end < len(s) and s[end] == ",":
-                      end += 1
-                  s = s[:start] + s[end:]
-
-          block = ",\n".join(
-              "    " + json.dumps(e, ensure_ascii=False, indent=2).replace("\n", "\n    ")
-              for e in entries
+          # Remove the nonexistent Undertale entry from the web-port block.
+          import re
+          s = re.sub(
+              r'\s*\{\s*"name": "Undertale",\s*"icon": "icon/web-port\.svg",\s*"url": "games/undertale/"\s*\},',
+              '',
+              s,
+              count=1
           )
-          needle = '  "games": [\n'
-          if needle not in s:
-              raise SystemExit("Could not find games array in content.jsonc")
-          s = s.replace(needle, needle + block + ",\n", 1)
+
+          # Keep the existing Kindergarten card pointed at the working local launcher.
+          s = s.replace('"url": "games/kindergarten/"', '"url": "games/kindergarten/"', 1)
+
           p.write_text(s, encoding="utf-8")
           PY
 
-      - name: Commit the mirrored game launchers
+      - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add games content.jsonc
           git diff --cached --quiet && exit 0
-          git commit -m "Add functional web-port game launchers"
+          git commit -m "Fix web-port game launchers and paths"
           git pull --rebase origin main
           git push
