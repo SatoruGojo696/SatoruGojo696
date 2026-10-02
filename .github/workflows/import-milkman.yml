@@ -1,4 +1,4 @@
-name: Import Milkman Karlson
+name: Mirror web-port games
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  import-game:
+  mirror-games:
     runs-on: ubuntu-latest
     steps:
       - name: Check out my site
@@ -18,33 +18,106 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Download my fork of the web port
-        run: |
-          git clone --depth 1 https://github.com/SatoruGojo696/web-port.git /tmp/web-port
-
-      - name: Copy the complete Milkman Karlson game
-        run: |
-          rm -rf games/milkman-karlson
-          mkdir -p games/milkman-karlson
-          cp -R /tmp/web-port/milkman-karlson/. games/milkman-karlson/
-
-      - name: Make the copied game run from this repository
+      - name: Create lightweight game launchers
+        env:
+          SOURCE_COMMIT: a8bea5fd11f88e5a9192857f434e299c40efe7e6
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          p = Path("games/milkman-karlson/index.html")
-          s = p.read_text()
-          s = s.replace('<base href="https://cdn.jsdelivr.net/gh/genizy/web-port@main/milkman-karlson/">',
-                        '<base href="./">')
-          p.write_text(s)
+          import html
+          import json
+          import os
+
+          games = {
+              "amanda-the-adventurer": "Amanda The Adventurer",
+              "andys-apple-farm": "Andy's Apple Farm",
+              "baldi-plus": "Baldi's Basics Plus",
+              "baldi-remaster": "Baldi's Basics Classic Remastered",
+              "bendy": "Bendy and The Ink Machine",
+              "bergentruck": "BERGENTRUCK 201x",
+              "deltatraveler": "Deltatraveler",
+              "donottakethiscathome": "Do NOT Take This Cat Home",
+              "fears-to-fathom": "Fears to Fathom: Home Alone",
+              "happy-sheepies": "Happy Sheepies",
+              "kindergarten": "Kindergarten 1 & 2",
+              "milkman-karlson": "Milkman Karlson",
+              "pizza-tower": "Pizza Tower",
+              "raft": "RAFT",
+              "slender": "Slender: The Eight Pages",
+              "sonic.exe": "Sonic.exe",
+              "speed-stars": "Speed Stars",
+              "tattletail": "Tattletail",
+              "thats-not-my-neighbor": "That's Not My Neighbor",
+              "the-man-in-the-window": "The Man From the Window",
+              "undertale": "Undertale",
+              "undertale-yellow": "Undertale Yellow",
+              "web-fishing": "Web Fishing",
+              "witch-heart": "Witch's Heart",
+              "yume-nikki": "Yume Nikki",
+          }
+
+          commit = os.environ["SOURCE_COMMIT"]
+          icon = "icon/web-port.svg"
+
+          launcher = '''<!doctype html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <title>__TITLE__</title>
+            <style>
+              html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#000}
+              iframe{display:block;width:100%;height:100%;border:0}
+            </style>
+          </head>
+          <body>
+            <iframe src="https://cdn.jsdelivr.net/gh/SatoruGojo696/web-port@__COMMIT__/__SLUG__/index.html" allow="autoplay; fullscreen; gamepad; pointer-lock" allowfullscreen></iframe>
+          </body>
+          </html>
+          '''
+
+          entries = []
+          for slug, title in games.items():
+              folder = Path("games") / slug
+              folder.mkdir(parents=True, exist_ok=True)
+              page = launcher.replace("__TITLE__", html.escape(title)).replace("__COMMIT__", commit).replace("__SLUG__", slug)
+              (folder / "index.html").write_text(page, encoding="utf-8")
+              entries.append({
+                  "name": title,
+                  "icon": icon,
+                  "url": f"games/{slug}/"
+              })
+
+          p = Path("content.jsonc")
+          s = p.read_text(encoding="utf-8")
+
+          for e in entries:
+              marker = f'"name": "{e["name"]}"'
+              while marker in s:
+                  marker_pos = s.index(marker)
+                  start = s.rfind("    {", 0, marker_pos)
+                  end = s.index("    }", marker_pos) + len("    }")
+                  if end < len(s) and s[end] == ",":
+                      end += 1
+                  s = s[:start] + s[end:]
+
+          block = ",\n".join(
+              "    " + json.dumps(e, ensure_ascii=False, indent=2).replace("\n", "\n    ")
+              for e in entries
+          )
+          needle = '  "games": [\n'
+          if needle not in s:
+              raise SystemExit("Could not find games array in content.jsonc")
+          s = s.replace(needle, needle + block + ",\n", 1)
+          p.write_text(s, encoding="utf-8")
           PY
 
-      - name: Commit and push the complete game
+      - name: Commit the mirrored game launchers
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add games/milkman-karlson
+          git add games content.jsonc
           git diff --cached --quiet && exit 0
-          git commit -m "Import Milkman Karlson from my web-port fork"
+          git commit -m "Add functional web-port game launchers"
           git pull --rebase origin main
           git push
