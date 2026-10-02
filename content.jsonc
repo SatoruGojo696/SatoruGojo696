@@ -1268,5 +1268,35 @@
       "url": "games/undertale/",
       "new": "true"
     }
-  ]
+      {
+      "name": "Celeste PICO",
+      "icon": "icon/celestepico.png",
+      "url": "games/celestepico/"
+    },
+    {
+      "name": "Clicker Heroes",
+      "icon": "icon/web-port.svg",
+      "url": "games/clickerheroes/"
+    },
+    {
+      "name": "Connections",
+      "icon": "icon/web-port.svg",
+      "url": "games/connections/"
+    },
+    {
+      "name": "Gladihoppers",
+      "icon": "icon/gladihoppers.png",
+      "url": "games/gladihoppers/"
+    },
+    {
+      "name": "Murder",
+      "icon": "icon/web-port.svg",
+      "url": "games/murder/"
+    },
+    {
+      "name": "Wordle",
+      "icon": "icon/wordle.png",
+      "url": "games/wordle/"
+    },
+]
 }
