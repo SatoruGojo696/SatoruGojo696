@@ -5,11 +5,131 @@
 {
   "games": [
     {
-      "name": "Milkman Karlson",
-      "icon": "icon/milkman-karlson.svg",
-      "url": "games/milkman-karlson/",
-      "new": "true"
+      "name": "Amanda The Adventurer",
+      "icon": "icon/web-port.svg",
+      "url": "games/amanda-the-adventurer/"
     },
+    {
+      "name": "Andy's Apple Farm",
+      "icon": "icon/web-port.svg",
+      "url": "games/andys-apple-farm/"
+    },
+    {
+      "name": "Baldi's Basics Plus",
+      "icon": "icon/web-port.svg",
+      "url": "games/baldi-plus/"
+    },
+    {
+      "name": "Baldi's Basics Classic Remastered",
+      "icon": "icon/web-port.svg",
+      "url": "games/baldi-remaster/"
+    },
+    {
+      "name": "Bendy and The Ink Machine",
+      "icon": "icon/web-port.svg",
+      "url": "games/bendy/"
+    },
+    {
+      "name": "BERGENTRUCK 201x",
+      "icon": "icon/web-port.svg",
+      "url": "games/bergentruck/"
+    },
+    {
+      "name": "Deltatraveler",
+      "icon": "icon/web-port.svg",
+      "url": "games/deltatraveler/"
+    },
+    {
+      "name": "Do NOT Take This Cat Home",
+      "icon": "icon/web-port.svg",
+      "url": "games/donottakethiscathome/"
+    },
+    {
+      "name": "Fears to Fathom: Home Alone",
+      "icon": "icon/web-port.svg",
+      "url": "games/fears-to-fathom/"
+    },
+    {
+      "name": "Happy Sheepies",
+      "icon": "icon/web-port.svg",
+      "url": "games/happy-sheepies/"
+    },
+    {
+      "name": "Kindergarten 1 & 2",
+      "icon": "icon/web-port.svg",
+      "url": "games/kindergarten/"
+    },
+    {
+      "name": "Milkman Karlson",
+      "icon": "icon/web-port.svg",
+      "url": "games/milkman-karlson/"
+    },
+    {
+      "name": "Pizza Tower",
+      "icon": "icon/web-port.svg",
+      "url": "games/pizza-tower/"
+    },
+    {
+      "name": "RAFT",
+      "icon": "icon/web-port.svg",
+      "url": "games/raft/"
+    },
+    {
+      "name": "Slender: The Eight Pages",
+      "icon": "icon/web-port.svg",
+      "url": "games/slender/"
+    },
+    {
+      "name": "Sonic.exe",
+      "icon": "icon/web-port.svg",
+      "url": "games/sonic.exe/"
+    },
+    {
+      "name": "Speed Stars",
+      "icon": "icon/web-port.svg",
+      "url": "games/speed-stars/"
+    },
+    {
+      "name": "Tattletail",
+      "icon": "icon/web-port.svg",
+      "url": "games/tattletail/"
+    },
+    {
+      "name": "That's Not My Neighbor",
+      "icon": "icon/web-port.svg",
+      "url": "games/thats-not-my-neighbor/"
+    },
+    {
+      "name": "The Man From the Window",
+      "icon": "icon/web-port.svg",
+      "url": "games/the-man-in-the-window/"
+    },
+    {
+      "name": "Undertale",
+      "icon": "icon/web-port.svg",
+      "url": "games/undertale/"
+    },
+    {
+      "name": "Undertale Yellow",
+      "icon": "icon/web-port.svg",
+      "url": "games/undertale-yellow/"
+    },
+    {
+      "name": "Web Fishing",
+      "icon": "icon/web-port.svg",
+      "url": "games/web-fishing/"
+    },
+    {
+      "name": "Witch's Heart",
+      "icon": "icon/web-port.svg",
+      "url": "games/witch-heart/"
+    },
+    {
+      "name": "Yume Nikki",
+      "icon": "icon/web-port.svg",
+      "url": "games/yume-nikki/"
+    },
+
     {
       "name": "Cut The Rope: Time Travel",
       "icon": "icon/cuttheropetimetravel.png",
@@ -689,16 +809,8 @@
       "icon": "icon/adventurecapitalist.png",
       "url": "games/adventurecapitalist/"
     },
-    {
-      "name": "Undertale",
-      "icon": "icon/undertale.png",
-      "url": "games/undertale/"
-    },
-    {
-      "name": "Undertale Yellow",
-      "icon": "icon/undertaleyellow.png",
-      "url": "games/undertale/yellow.html"
-    },
+
+
     {
       "name": "Deltarune",
       "icon": "icon/deltarune.png",
