@@ -18,17 +18,17 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Download the authorized web port
+      - name: Download my fork of the web port
         run: |
-          git clone --depth 1 https://github.com/genizy/web-port.git /tmp/web-port
+          git clone --depth 1 https://github.com/SatoruGojo696/web-port.git /tmp/web-port
 
-      - name: Copy Milkman Karlson
+      - name: Copy the complete Milkman Karlson game
         run: |
           rm -rf games/milkman-karlson
           mkdir -p games/milkman-karlson
           cp -R /tmp/web-port/milkman-karlson/. games/milkman-karlson/
 
-      - name: Make the game self-contained
+      - name: Make the copied game run from this repository
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -39,12 +39,12 @@ jobs:
           p.write_text(s)
           PY
 
-      - name: Commit and push the imported game
+      - name: Commit and push the complete game
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add games/milkman-karlson
           git diff --cached --quiet && exit 0
-          git commit -m "Add Milkman Karlson web port"
+          git commit -m "Import Milkman Karlson from my web-port fork"
           git pull --rebase origin main
           git push
