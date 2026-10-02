@@ -57,22 +57,15 @@
     <script src="Build/UnityLoader.js"></script>
     <script>
         function mergeFiles(fileParts) {
-            return new Promise((resolve, reject) => {
-                let buffers = [];
-
-                function fetchPart(index) {
-                    if (index >= fileParts.length) {
-                        let mergedBlob = new Blob(buffers);
-                        let mergedFileUrl = URL.createObjectURL(mergedBlob);
-                        resolve(mergedFileUrl);
-                        return;
-                    }
-                    fetch(fileParts[index]).then((response) => response.arrayBuffer()).then((data) => {
-                        buffers.push(data);
-                        fetchPart(index + 1);
-                    }).catch(reject);
+            return Promise.all(fileParts.map(async (part) => {
+                const response = await fetch(part);
+                if (!response.ok) {
+                    throw new Error("Could not load " + part + " (" + response.status + ")");
                 }
-                fetchPart(0);
+                return response.arrayBuffer();
+            })).then((buffers) => {
+                const mergedBlob = new Blob(buffers);
+                return URL.createObjectURL(mergedBlob);
             });
         }
 
@@ -89,8 +82,9 @@
             container.style.width = window.innerWidth + "px";
             container.style.height = window.innerHeight + "px";
         }
+        const DATA_CDN = "https://cdn.jsdelivr.net/gh/SatoruGojo696/web-port@a8bea5fd11f88e5a9192857f434e299c40efe7e6/milkman-karlson/Build/";
         Promise.all([
-            mergeFiles(getParts("Build/MILKMAN.data.unityweb", 1, 5))
+            mergeFiles(getParts(DATA_CDN + "MILKMAN.data.unityweb", 1, 5))
         ]).then(([dataUrl]) => {
             window.dataUrll = dataUrl;
             var json = {
@@ -124,6 +118,12 @@
                     }
                 }
             });
+        }).catch((error) => {
+            console.error("Milkman Karlson failed to load:", error);
+            const loading = document.querySelector("#loading-text");
+            loading.textContent = "GAME FILES FAILED TO LOAD";
+            loading.style.fontFamily = "Arial, sans-serif";
+            loading.style.fontSize = "28px";
         });
     </script>
 </head>
