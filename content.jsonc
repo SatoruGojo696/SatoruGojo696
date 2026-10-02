@@ -1135,6 +1135,138 @@
       "name": "Minecraft 1.12.2",
       "icon": "icon/eaglercraft1.12.png",
       "url": "games/eaglercraft1.12/"
+    },
+    {
+      "name": "Google Snake",
+      "icon": "icon/web-port.svg",
+      "url": "games/google-snake/",
+      "new": "true"
+    },
+    {
+      "name": "OVO",
+      "icon": "icon/web-port.svg",
+      "url": "games/ovo/",
+      "new": "true"
+    },
+    {
+      "name": "Chrome Dino",
+      "icon": "icon/web-port.svg",
+      "url": "games/chrome-dino/",
+      "new": "true"
+    },
+    {
+      "name": "Duck Life 1",
+      "icon": "icon/web-port.svg",
+      "url": "games/duck-life-1/",
+      "new": "true"
+    },
+    {
+      "name": "Hextris",
+      "icon": "icon/web-port.svg",
+      "url": "games/hextris/",
+      "new": "true"
+    },
+    {
+      "name": "Learn to Fly",
+      "icon": "icon/web-port.svg",
+      "url": "games/learn-to-fly/",
+      "new": "true"
+    },
+    {
+      "name": "Learn to Fly 3",
+      "icon": "icon/web-port.svg",
+      "url": "games/learn-to-fly-3/",
+      "new": "true"
+    },
+    {
+      "name": "Papa's Burgeria",
+      "icon": "icon/web-port.svg",
+      "url": "games/papas-burgeria/",
+      "new": "true"
+    },
+    {
+      "name": "Papa's Cheeseria",
+      "icon": "icon/web-port.svg",
+      "url": "games/papas-cheeseria/",
+      "new": "true"
+    },
+    {
+      "name": "Papa's Cupcakeria",
+      "icon": "icon/web-port.svg",
+      "url": "games/papas-cupcakeria/",
+      "new": "true"
+    },
+    {
+      "name": "Papa's Freezeria",
+      "icon": "icon/web-port.svg",
+      "url": "games/papas-freezeria/",
+      "new": "true"
+    },
+    {
+      "name": "Papa's Pancakeria",
+      "icon": "icon/web-port.svg",
+      "url": "games/papas-pancakeria/",
+      "new": "true"
+    },
+    {
+      "name": "Papa's Pastaria",
+      "icon": "icon/web-port.svg",
+      "url": "games/papas-pastaria/",
+      "new": "true"
+    },
+    {
+      "name": "Papa's Pizzeria",
+      "icon": "icon/web-port.svg",
+      "url": "games/papas-pizzeria/",
+      "new": "true"
+    },
+    {
+      "name": "Papa's Scooperia",
+      "icon": "icon/web-port.svg",
+      "url": "games/papas-scooperia/",
+      "new": "true"
+    },
+    {
+      "name": "Papa's Sushiria",
+      "icon": "icon/web-port.svg",
+      "url": "games/papas-sushiria/",
+      "new": "true"
+    },
+    {
+      "name": "Run 2",
+      "icon": "icon/web-port.svg",
+      "url": "games/run-2/",
+      "new": "true"
+    },
+    {
+      "name": "Flappy Birb",
+      "icon": "icon/web-port.svg",
+      "url": "games/flappy-birb/",
+      "new": "true"
+    },
+    {
+      "name": "The Impossible Quiz",
+      "icon": "icon/web-port.svg",
+      "url": "games/impossible-quiz/",
+      "new": "true"
+    },
+    {
+      "name": "Riddle School 1",
+      "icon": "icon/web-port.svg",
+      "url": "games/riddle-school-1/",
+      "new": "true"
+    },
+    {
+      "name": "Riddle School 2",
+      "icon": "icon/web-port.svg",
+      "url": "games/riddle-school-2/",
+      "new": "true"
+    },
+    {
+      "name": "Undertale",
+      "icon": "icon/web-port.svg",
+      "url": "games/undertale/",
+      "new": "true"
     }
   ]
 }
