@@ -211,3 +211,26 @@ svg {
         width: 80%;
     }
 }
+
+
+.locked-games-button {
+    margin-left: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 16px;
+    border-radius: 40px;
+    border: 1px solid #37343421;
+    background: #1e1e1e;
+    color: #ffffffd3;
+    font-family: 'Baloo Thambi 2';
+    font-size: 1em;
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.2s ease;
+    cursor: pointer;
+}
+
+.locked-games-button:hover {
+    transform: translateY(-2px);
+    background: #292929;
+}
