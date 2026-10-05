@@ -46,17 +46,17 @@
     },
     {
       "name": "Fears to Fathom: Home Alone",
-      "icon": "FearsToFathomHomeAlone.jpeg",
+      "icon": "icon/FearsToFathomHomeAlone.jpeg",
       "url": "games/fears-to-fathom/"
     },
     {
       "name": "Happy Sheepies",
-      "icon": "HappySheepies.jpg",
+      "icon": "icon/HappySheepies.jpg",
       "url": "games/happy-sheepies/"
     },
     {
       "name": "Kindergarten 1 & 2",
-      "icon": "Kindergarden.jpg",
+      "icon": "icon/Kindergarden.jpg",
       "url": "games/kindergarten/"
     },
     {
@@ -66,42 +66,42 @@
     },
     {
       "name": "Pizza Tower",
-      "icon": "Pizzatower.jpg",
+      "icon": "icon/Pizzatower.jpg",
       "url": "games/pizza-tower/"
     },
     {
       "name": "RAFT",
-      "icon": "Raft.jpeg",
+      "icon": "icon/Raft.jpeg",
       "url": "games/raft/"
     },
     {
       "name": "Slender: The Eight Pages",
-      "icon": "Slender.jpg",
+      "icon": "icon/Slender.jpg",
       "url": "games/slender/"
     },
     {
       "name": "Sonic.exe",
-      "icon": "Sonix.exe.jpg",
+      "icon": "icon/Sonix.exe.jpg",
       "url": "games/sonic.exe/"
     },
     {
       "name": "Speed Stars",
-      "icon": "SpeedStars.jpg",
+      "icon": "icon/SpeedStars.jpg",
       "url": "games/speed-stars/"
     },
     {
       "name": "Tattletail",
-      "icon": "Tattletail.jpeg",
+      "icon": "icon/Tattletail.jpeg",
       "url": "games/tattletail/"
     },
     {
       "name": "That's Not My Neighbor",
-      "icon": "ThatsNotMyNeighbor.jpg",
+      "icon": "icon/ThatsNotMyNeighbor.jpg",
       "url": "games/thats-not-my-neighbor/"
     },
     {
       "name": "The Man From the Window",
-      "icon": "ManFromTheWindow.avif",
+      "icon": "icon/ManFromTheWindow.avif",
       "url": "games/the-man-in-the-window/"
     },
     {
@@ -121,7 +121,7 @@
     },
     {
       "name": "Yume Nikki",
-      "icon": "YumeNikki.jpeg",
+      "icon": "icon/YumeNikki.jpeg",
       "url": "games/yume-nikki/"
     },
     {
@@ -1122,7 +1122,7 @@
     },
     {
       "name": "Chrome Dino",
-      "icon": "icon/hollowknight.png",
+      "icon": "",
       "url": "games/chrome-dino/",
       "new": "true"
     },
