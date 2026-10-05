@@ -1267,11 +1267,6 @@
       "icon": "icon/web-port.svg",
       "url": "games/undertale/",
       "new": "true"
-    }
-      {
-      "name": "Celeste PICO",
-      "icon": "icon/celestepico.png",
-      "url": "games/celestepico/"
     },
     {
       "name": "Clicker Heroes",
@@ -1292,11 +1287,6 @@
       "name": "Murder",
       "icon": "icon/web-port.svg",
       "url": "games/murder/"
-    },
-    {
-      "name": "Wordle",
-      "icon": "icon/wordle.png",
-      "url": "games/wordle/"
-    },
-]
+    }
+  ]
 }
