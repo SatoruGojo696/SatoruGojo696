@@ -124,37 +124,11 @@
       "icon": "YumeNikki.jpeg",
       "url": "games/yume-nikki/"
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {
       "name": "Cut The Rope: Time Travel",
       "icon": "icon/cuttheropetimetravel.png",
       "url": "games/cuttheropetimetravel/",
-      "new":"true"
+      "new": "true"
     },
     {
       "name": "Cuphead",
@@ -829,8 +803,6 @@
       "icon": "icon/adventurecapitalist.png",
       "url": "games/adventurecapitalist/"
     },
-
-
     {
       "name": "Deltarune",
       "icon": "icon/deltarune.png",
@@ -1310,6 +1282,42 @@
       "name": "Look Outside",
       "icon": "icon/LookOutside.jpg",
       "url": "games/look-outside/",
+      "new": "true"
+    },
+    {
+      "name": "Class of '09",
+      "icon": "icon/web-port.svg",
+      "url": "games/class-of-09/",
+      "new": "true"
+    },
+    {
+      "name": "BLOODMONEY!",
+      "icon": "icon/web-port.svg",
+      "url": "games/bloodmoney/",
+      "new": "true"
+    },
+    {
+      "name": "Buckshot Roulette",
+      "icon": "icon/web-port.svg",
+      "url": "games/buckshot-roulette/",
+      "new": "true"
+    },
+    {
+      "name": "Karlson",
+      "icon": "icon/MIlkManKarlson.jpg",
+      "url": "games/karlson/",
+      "new": "true"
+    },
+    {
+      "name": "OMORI (Fixed)",
+      "icon": "icon/Omori.jpeg",
+      "url": "games/omori-fixed/",
+      "new": "true"
+    },
+    {
+      "name": "Yandere Simulator",
+      "icon": "icon/web-port.svg",
+      "url": "games/yandere-simulator/",
       "new": "true"
     }
   ]
