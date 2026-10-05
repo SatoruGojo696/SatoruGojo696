@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#76c043"/><stop offset="1" stop-color="#17351a"/></linearGradient></defs>
+<rect width="512" height="512" rx="96" fill="url(#g)"/>
+<circle cx="175" cy="225" r="86" fill="#fff"/>
+<circle cx="337" cy="225" r="86" fill="#fff"/>
+<circle cx="175" cy="225" r="36" fill="#222"/>
+<circle cx="337" cy="225" r="36" fill="#222"/>
+<path d="M120 322 Q256 420 392 322 Q365 438 256 450 Q147 438 120 322Z" fill="#f5d34a"/>
+<path d="M143 335 Q256 395 369 335" fill="none" stroke="#222" stroke-width="16" stroke-linecap="round"/>
+<text x="256" y="95" text-anchor="middle" font-family="Arial,sans-serif" font-size="46" font-weight="800" fill="#fff">PVZ</text>
+<text x="256" y="485" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="800" fill="#fff">FUSION</text>
+</svg>
