@@ -115,16 +115,6 @@
       "url": "games/web-fishing/"
     },
     {
-      "name": "Witch's Heart",
-      "icon": "icon/web-port.svg",
-      "url": "games/witch-heart/"
-    },
-    {
-      "name": "Yume Nikki",
-      "icon": "icon/YumeNikki.jpeg",
-      "url": "games/yume-nikki/"
-    },
-    {
       "name": "Cut The Rope: Time Travel",
       "icon": "icon/cuttheropetimetravel.png",
       "url": "games/cuttheropetimetravel/",
