@@ -6,12 +6,12 @@
   "games": [
     {
       "name": "Amanda The Adventurer",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/AmandaTheAdventurer.webp",
       "url": "games/amanda-the-adventurer/"
     },
     {
       "name": "Andy's Apple Farm",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/AndysAppleFarm.png",
       "url": "games/andys-apple-farm/"
     },
     {
@@ -36,7 +36,7 @@
     },
     {
       "name": "Deltatraveler",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/DeltaTraveler.webp",
       "url": "games/deltatraveler/"
     },
     {
@@ -61,7 +61,7 @@
     },
     {
       "name": "Milkman Karlson",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/milkman-karlson.svg",
       "url": "games/milkman-karlson/"
     },
     {
@@ -106,12 +106,12 @@
     },
     {
       "name": "Undertale Yellow",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/undertaleyellow.png",
       "url": "games/undertale-yellow/"
     },
     {
       "name": "Web Fishing",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/WebFishing.jpg",
       "url": "games/web-fishing/"
     },
     {
@@ -1138,19 +1138,19 @@
     },
     {
       "name": "Google Snake",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/GoogleSnake.jpeg",
       "url": "games/google-snake/",
       "new": "true"
     },
     {
       "name": "OVO",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/OVO.webp",
       "url": "games/ovo/",
       "new": "true"
     },
     {
       "name": "Chrome Dino",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/hollowknight.png",
       "url": "games/chrome-dino/",
       "new": "true"
     },
@@ -1198,7 +1198,7 @@
     },
     {
       "name": "Papa's Freezeria",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/papasfreezeria.png",
       "url": "games/papas-freezeria/",
       "new": "true"
     },
@@ -1228,7 +1228,7 @@
     },
     {
       "name": "Papa's Sushiria",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/papassushiria.png",
       "url": "games/papas-sushiria/",
       "new": "true"
     },
@@ -1264,7 +1264,7 @@
     },
     {
       "name": "Undertale",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/undertale.png",
       "url": "games/undertale/",
       "new": "true"
     },
@@ -1275,7 +1275,7 @@
     },
     {
       "name": "Connections",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/Connections.png",
       "url": "games/connections/"
     },
     {
@@ -1285,8 +1285,32 @@
     },
     {
       "name": "Murder",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/Murder.webp",
       "url": "games/murder/"
+    },
+    {
+      "name": "Slime Rancher",
+      "icon": "icon/SlimeRancher.jpeg",
+      "url": "games/slime-rancher/",
+      "new": "true"
+    },
+    {
+      "name": "Slime Rancher (Decompiled)",
+      "icon": "icon/SlimeRancher.jpeg",
+      "url": "games/slime-ranchers/",
+      "new": "true"
+    },
+    {
+      "name": "Plants vs. Zombies: Fusion",
+      "icon": "icon/pvzfusion.svg",
+      "url": "games/pvz-fusion/",
+      "new": "true"
+    },
+    {
+      "name": "Look Outside",
+      "icon": "icon/LookOutside.jpg",
+      "url": "games/look-outside/",
+      "new": "true"
     }
   ]
 }
