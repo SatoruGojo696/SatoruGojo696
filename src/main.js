@@ -19,7 +19,9 @@ const paginationContainer = document.getElementById('pagination');
 const searchInput = document.getElementById('search');
 const sortSelect = document.getElementById('sort');
 const newGamesButton = document.getElementById('newGamesButton');
+const favoritesButton = document.getElementById('favoritesButton');
 let showNewOnly = false;
+let showFavoritesOnly = false;
 
 const nav = document.querySelector('nav');
 [...nav.children].forEach(elem =>
@@ -32,15 +34,34 @@ else sortSelect.value = currentSort;
 function update(page = 1) {
     currentPage = page;
     const perPage = getGamesPerPage(gamesContainer, nav, paginationContainer);
-    const visibleGames = showNewOnly ? games.filter(game => game.new === "true") : games;
+    const visibleGames = games.filter(game => {
+        if (showNewOnly && game.new !== "true") return false;
+        if (showFavoritesOnly && !getFavorites().has(game.name)) return false;
+        return true;
+    });
     renderPage(gamesContainer, visibleGames, currentSort, searchInput, loadGame, currentPage, perPage);
     renderPagination(paginationContainer, visibleGames, currentSort, searchInput, currentPage, perPage, update);
+}
+
+function getFavorites() {
+    try {
+        return new Set(JSON.parse(localStorage.getItem("Vertex3.favorites") || "[]"));
+    } catch {
+        return new Set();
+    }
 }
 
 function refresh() { update(1); }
 
 searchInput.addEventListener('input', refresh);
 window.addEventListener('resize', refresh);
+favoritesButton.addEventListener('click', () => {
+    showFavoritesOnly = !showFavoritesOnly;
+    favoritesButton.classList.toggle('active', showFavoritesOnly);
+    favoritesButton.setAttribute('aria-pressed', String(showFavoritesOnly));
+    refresh();
+});
+
 newGamesButton.addEventListener('click', () => {
     showNewOnly = !showNewOnly;
     newGamesButton.classList.toggle('active', showNewOnly);
