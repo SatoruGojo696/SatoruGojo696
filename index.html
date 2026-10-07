@@ -83,7 +83,7 @@
   </main>
   <script src="src/main.js" type="module" defer></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    (() => {
       const button = document.getElementById('announcementsButton');
       const overlay = document.getElementById('announcementOverlay');
       const content = document.getElementById('announcementContent');
@@ -92,40 +92,17 @@
 
       if (!button || !overlay || !content || !close || !ok) return;
 
-      const README_URL =
-        'https://raw.githubusercontent.com/SatoruGojo696/SatoruGojo696/main/README.md';
-
-      const closeAnnouncements = () => {
-        overlay.hidden = true;
-      };
-
-      const loadAnnouncements = async () => {
+      const openAnnouncements = async () => {
+        overlay.hidden = false;
         content.innerHTML = '<p>Loading announcements...</p>';
 
         try {
-          const response = await fetch(README_URL + '?v=' + Date.now(), {
-            cache: 'no-store'
-          });
-
-          if (!response.ok) {
-            throw new Error('README request failed: ' + response.status);
-          }
-
+          const response = await fetch('./README.md?cache=' + Date.now(), { cache: 'no-store' });
+          if (!response.ok) throw new Error('Failed to load README');
           const markdown = await response.text();
-          const heading = '# Vertex 3 Announcements';
-          const headingIndex = markdown.toLowerCase().indexOf(heading.toLowerCase());
 
-          if (headingIndex === -1) {
-            content.innerHTML = '<p>No announcements right now.</p>';
-            return;
-          }
-
-          const afterHeading = markdown.slice(headingIndex + heading.length);
-          const nextHeading = afterHeading.search(/\n# /);
-          const announcement = (nextHeading === -1
-            ? afterHeading
-            : afterHeading.slice(0, nextHeading)
-          ).trim();
+          const match = markdown.match(/# Vertex 3 Announcements[\s\S]*?(?=\n# |$)/i);
+          const announcement = match ? match[0].replace(/^# Vertex 3 Announcements\s*/i, '').trim() : '';
 
           if (!announcement) {
             content.innerHTML = '<p>No announcements right now.</p>';
@@ -133,39 +110,29 @@
           }
 
           content.innerHTML = announcement
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
             .replace(/\n/g, '<br>');
         } catch (error) {
-          console.error('Announcements:', error);
-          content.innerHTML =
-            '<p>Could not load announcements right now. Please try again later.</p>';
+          console.error(error);
+          content.innerHTML = '<p>Could not load announcements right now. Please try again later.</p>';
         }
       };
 
-      const openAnnouncements = async () => {
-        overlay.hidden = false;
-        await loadAnnouncements();
+      const closeAnnouncements = () => {
+        overlay.hidden = true;
       };
 
       button.addEventListener('click', openAnnouncements);
+      closeAnnouncements();
       close.addEventListener('click', closeAnnouncements);
       ok.addEventListener('click', closeAnnouncements);
-
       overlay.addEventListener('click', event => {
         if (event.target === overlay) closeAnnouncements();
       });
-
       document.addEventListener('keydown', event => {
-        if (event.key === 'Escape' && !overlay.hidden) {
-          closeAnnouncements();
-        }
+        if (event.key === 'Escape' && !overlay.hidden) closeAnnouncements();
       });
-
-      closeAnnouncements();
-    });
+    })();
   </script>
 </body>
 
