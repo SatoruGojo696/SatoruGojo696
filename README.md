@@ -3,10 +3,19 @@ Sponsered by Vertex III
 
 # Vertex 3 Announcements
 
-Update V 01
+Update V 02
 
 New games and Announcement system added. New games will be Marked with *New* as well as being in the *new games* folder.
+New game sorting still In progress.
 
-Please be patient as some games may not have Functional Icons, or may not work in general.
+Announcements will have its own tab above the games. Up on clicking, this popup will reappear so you may see updates.
+
+New Server Profile picture added.
+
+Please be patient as some games may not work in general.
+
+All game icons have been fixed/replaced accordingly.
+
+A new Favorites tab has been added, click the star on the games you love, and it will appear in the favorites folder above, as well as before any other games in the list.
 
 For questions, comments, or suggestions, please let me know. If you know whom I am.
