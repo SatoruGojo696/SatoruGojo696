@@ -3,8 +3,10 @@ Sponsered by Vertex III
 
 # Vertex 3 Announcements
 
-Edit this section whenever you want to change the message shown in the announcement window on the website.
+Update V 01
 
-**Example:**
+New games and Announcement system added. New games will be Marked with :New: as well as being in the :new games: folder.
 
-New games have been added! Check the newest games, and remember that some mature games are kept in the restricted section.
+Please be patient as some games may not have Functional Icons, or may not work in general.
+
+For questions, comments, or suggestions, please let me know. If you know whom I am.
