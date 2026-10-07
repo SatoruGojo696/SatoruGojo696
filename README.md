@@ -10,7 +10,7 @@ New game sorting still In progress.
 
 Announcements will have its own tab above the games. Up on clicking, this popup will reappear so you may see updates.
 
-New Server Profile picture added.
+New Server Profile picture added. New cool background added.
 
 Please be patient as some games may not work in general. I am working on it.
 
