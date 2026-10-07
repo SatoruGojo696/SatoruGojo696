@@ -16,19 +16,19 @@
   },
   {
       "name": "Buckshot Roulette",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/BuckShot.jpg",
       "url": "games/buckshot-roulette/",
       "new": "true"
   },
   {
       "name": "BLOODMONEY!",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/BloodMoney.webp",
       "url": "games/bloodmoney/",
       "new": "true"
   },
   {
       "name": "Class of '09",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/ClassOf09.jpeg",
       "url": "games/class-of-09/",
       "new": "true"
   },
@@ -39,13 +39,13 @@
   },
   {
       "name": "Yandere Simulator",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/YandereSim.png",
       "url": "games/yandere-simulator/",
       "new": "true"
   },
   {
     "name": "Witch's Heart",
-    "icon": "../icon/web-port.svg",
+    "icon": "icon/WhitchesHeart.webp",
     "url": "games/witch-heart/"
   }
 ]
