@@ -18,6 +18,8 @@ const gamesContainer = document.getElementById('games');
 const paginationContainer = document.getElementById('pagination');
 const searchInput = document.getElementById('search');
 const sortSelect = document.getElementById('sort');
+const newGamesButton = document.getElementById('newGamesButton');
+let showNewOnly = false;
 
 const nav = document.querySelector('nav');
 [...nav.children].forEach(elem =>
@@ -30,14 +32,22 @@ else sortSelect.value = currentSort;
 function update(page = 1) {
     currentPage = page;
     const perPage = getGamesPerPage(gamesContainer, nav, paginationContainer);
-    renderPage(gamesContainer, games, currentSort, searchInput, loadGame, currentPage, perPage);
-    renderPagination(paginationContainer, games, currentSort, searchInput, currentPage, perPage, update);
+    const visibleGames = showNewOnly ? games.filter(game => game.new === "true") : games;
+    renderPage(gamesContainer, visibleGames, currentSort, searchInput, loadGame, currentPage, perPage);
+    renderPagination(paginationContainer, visibleGames, currentSort, searchInput, currentPage, perPage, update);
 }
 
 function refresh() { update(1); }
 
 searchInput.addEventListener('input', refresh);
 window.addEventListener('resize', refresh);
+newGamesButton.addEventListener('click', () => {
+    showNewOnly = !showNewOnly;
+    newGamesButton.classList.toggle('active', showNewOnly);
+    newGamesButton.setAttribute('aria-pressed', String(showNewOnly));
+    refresh();
+});
+
 sortSelect.addEventListener('change', () => {
     currentSort = sortSelect.value;
     localStorage.setItem("Vertex3.sort", currentSort);
