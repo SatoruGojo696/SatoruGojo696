@@ -10,6 +10,11 @@
       "url": "games/thecoffinofandyandleyley"
   },
   {
+      "name": "Bloxorz",
+      "icon": "icon/bloxorz.png",
+      "url": "$FLASH/bloxors.swf"
+  },
+  {
       "name": "My Femboy Roomate",
       "icon": "../locked-games/Icons-Locked/MFR.png",
       "url": "games/myfemboyroomate"
