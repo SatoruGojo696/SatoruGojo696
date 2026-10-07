@@ -101,7 +101,10 @@ export function renderPage(gamesContainer, games, currentSort, searchInput, load
             }
             title.style.fontSize = fontSize + 'px';
 
-            card.innerHTML = `<img src="${game.icon}" alt="${game.name}">`;
+            const image = document.createElement('img');
+            image.src = game.icon;
+            image.alt = game.name;
+            card.appendChild(image);
             // new game, add "true" text
             if (game.new === "true") {
                 const ribbon = document.createElement("div");
