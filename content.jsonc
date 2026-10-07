@@ -985,6 +985,11 @@ wonderfull
       "url": "$FLASH/bubbleshooter.swf"
     },
     {
+      "name": "Bloxorz",
+      "icon": "icon/bloxorz.png",
+      "url": "$FLASH/bloxors.swf"
+    },
+    {
       "name": "Burrito Bison",
       "icon": "icon/burritobison.png",
       "url": "$FLASH/burritobison.swf"
