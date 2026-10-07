@@ -5,6 +5,45 @@
     "url": "games/yume-nikki/"
   },
   {
+      "name": "Coffin of Andrew and Leyley",
+      "icon": "icon/thecoffinofandyandleyley.png",
+      "url": "games/thecoffinofandyandleyley"
+  },
+  {
+      "name": "My Femboy Roomate",
+      "icon": "icon/myfemboyroomate.png",
+      "url": "games/myfemboyroomate"
+  },
+  {
+      "name": "Buckshot Roulette",
+      "icon": "icon/web-port.svg",
+      "url": "games/buckshot-roulette/",
+      "new": "true"
+  },
+  {
+      "name": "BLOODMONEY!",
+      "icon": "icon/web-port.svg",
+      "url": "games/bloodmoney/",
+      "new": "true"
+  },
+  {
+      "name": "Class of '09",
+      "icon": "icon/web-port.svg",
+      "url": "games/class-of-09/",
+      "new": "true"
+  },
+  {
+      "name": "ULTRAKILL",
+      "icon": "icon/ultrakill.png",
+      "url": "games/ultrakill/"
+  },
+  {
+      "name": "Yandere Simulator",
+      "icon": "icon/web-port.svg",
+      "url": "games/yandere-simulator/",
+      "new": "true"
+  },
+  {
     "name": "Witch's Heart",
     "icon": "../icon/web-port.svg",
     "url": "games/witch-heart/"
