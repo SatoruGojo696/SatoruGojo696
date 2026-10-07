@@ -8,7 +8,7 @@ The default code is **####**.
 
 Change it near the top of `locked-games/index.html`:
 
-    const ACCESS_CODE = "4827";
+    const ACCESS_CODE = "####";
 
 This is only a client-side lock. Anyone who can inspect the site source can find the code, so treat it as a fun/private section rather than real security.
 
