@@ -22,14 +22,19 @@ export function getSortedGames(games, currentSort) {
     // times user has launched game
     const launches = JSON.parse(localStorage.getItem("Vertex3.launches") || "{}");
 
+    const favorites = new Set(JSON.parse(localStorage.getItem("Vertex3.favorites") || "[]"));
     let sorted = [...games];
-    if (currentSort === 'alphabet') {
-        // sort using alphanumerical format
-        sorted.sort((a, b) => a.name.localeCompare(b.name));
-    } else if (currentSort === 'launches') {
-        // sort based on times user has launched
-        sorted.sort((a, b) => (launches[b.name] || 0) - (launches[a.name] || 0));
-    }
+    sorted.sort((a, b) => {
+        const favoriteDifference = Number(favorites.has(b.name)) - Number(favorites.has(a.name));
+        if (favoriteDifference !== 0) return favoriteDifference;
+
+        if (currentSort === 'alphabet') {
+            return a.name.localeCompare(b.name);
+        } else if (currentSort === 'launches') {
+            return (launches[b.name] || 0) - (launches[a.name] || 0);
+        }
+        return 0;
+    });
     // else, returns by index (date added)
     return sorted;
 }
@@ -89,6 +94,24 @@ export function renderPage(gamesContainer, games, currentSort, searchInput, load
         rowGames.forEach((game, idx) => {
             const card = document.createElement('div');
             card.className = 'game-card';
+
+            const favorites = new Set(JSON.parse(localStorage.getItem("Vertex3.favorites") || "[]"));
+            const favoriteButton = document.createElement('button');
+            favoriteButton.className = "favorite-button";
+            favoriteButton.type = "button";
+            favoriteButton.setAttribute("aria-label", favorites.has(game.name) ? `Remove ${game.name} from favorites` : `Add ${game.name} to favorites`);
+            favoriteButton.textContent = favorites.has(game.name) ? "★" : "☆";
+            if (favorites.has(game.name)) favoriteButton.classList.add("favorited");
+            favoriteButton.onclick = (event) => {
+                event.stopPropagation();
+                const saved = new Set(JSON.parse(localStorage.getItem("Vertex3.favorites") || "[]"));
+                if (saved.has(game.name)) saved.delete(game.name);
+                else saved.add(game.name);
+                localStorage.setItem("Vertex3.favorites", JSON.stringify([...saved]));
+                renderPage(gamesContainer, games, currentSort, searchInput, loadGame, currentPage, perPage);
+            };
+            card.appendChild(favoriteButton);
+
             if (game.new === "true") card.classList.add("new");
 
             const title = document.createElement('h3');
