@@ -5,7 +5,7 @@ Sponsered by Vertex III
 
 Update V 01
 
-New games and Announcement system added. New games will be Marked with :New: as well as being in the :new games: folder.
+New games and Announcement system added. New games will be Marked with *New* as well as being in the *new games* folder.
 
 Please be patient as some games may not have Functional Icons, or may not work in general.
 
