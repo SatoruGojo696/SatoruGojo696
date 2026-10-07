@@ -10,6 +10,7 @@ import * as JSONC from './jsonc.js';
 import { renderPage, getGamesPerPage, getSortedGames } from './Page.js';
 import { renderPagination } from './Pagination.js';
 import { loadGame, deleteFrame, getIframe } from './GameLoader.js';
+import { SITE_BACKGROUND } from './site-config.js';
 
 let games = [];
 let currentPage = 1;
@@ -116,56 +117,11 @@ window.Vertex3 = window.Vertex3 || {};
 window.Vertex3.LoadGame = (url, gameName, nav) => loadGame(url, gameName, nav);
 
 
-// Custom site background
-const backgroundButton = document.getElementById('backgroundButton');
-const backgroundOverlay = document.getElementById('backgroundOverlay');
-const backgroundInput = document.getElementById('backgroundInput');
-const backgroundApply = document.getElementById('backgroundApply');
-const backgroundClear = document.getElementById('backgroundClear');
-const backgroundClose = document.getElementById('backgroundClose');
-const backgroundStatus = document.getElementById('backgroundStatus');
-const BACKGROUND_KEY = 'Vertex3.backgroundImage';
-
-function setSiteBackground(path) {
-    const cleanPath = path.trim();
-    if (!cleanPath) {
-        document.body.style.removeProperty('--vertex-background-image');
-        localStorage.removeItem(BACKGROUND_KEY);
-        backgroundStatus.textContent = 'Background cleared.';
-        return;
-    }
-    const safePath = cleanPath.replace(/\\/g, '/').replace(/^\//, '');
-    if (!safePath.startsWith('icon/')) {
-        backgroundStatus.textContent = 'Please use an image path starting with icon/. ';
-        return;
-    }
-    document.body.style.setProperty('--vertex-background-image', `url("${safePath.replace(/"/g, '%22')}")`);
-    localStorage.setItem(BACKGROUND_KEY, safePath);
-    backgroundStatus.textContent = 'Background saved!';
+// Custom site background is controlled only through src/site-config.js.
+function applySiteBackground() {
+    const path = String(SITE_BACKGROUND || '').trim().replace(/\\/g, '/').replace(/^\//, '');
+    if (!path || !path.startsWith('icon/')) return;
+    document.body.style.setProperty('--vertex-background-image', `url("${path.replace(/"/g, '%22')}")`);
 }
 
-if (backgroundButton && backgroundOverlay) {
-    const savedBackground = localStorage.getItem(BACKGROUND_KEY);
-    if (savedBackground) {
-        backgroundInput.value = savedBackground;
-        setSiteBackground(savedBackground);
-        backgroundStatus.textContent = '';
-    }
-    backgroundButton.addEventListener('click', () => {
-        backgroundOverlay.hidden = false;
-        backgroundInput.focus();
-    });
-    backgroundApply.addEventListener('click', () => setSiteBackground(backgroundInput.value));
-    backgroundClear.addEventListener('click', () => {
-        backgroundInput.value = '';
-        setSiteBackground('');
-    });
-    backgroundClose.addEventListener('click', () => { backgroundOverlay.hidden = true; });
-    backgroundOverlay.addEventListener('click', event => {
-        if (event.target === backgroundOverlay) backgroundOverlay.hidden = true;
-    });
-    backgroundInput.addEventListener('keydown', event => {
-        if (event.key === 'Enter') setSiteBackground(backgroundInput.value);
-        if (event.key === 'Escape') backgroundOverlay.hidden = true;
-    });
-}
+applySiteBackground();
