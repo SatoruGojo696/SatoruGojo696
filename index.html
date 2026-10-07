@@ -100,8 +100,8 @@
           if (!response.ok) throw new Error('Failed to load README');
           const markdown = await response.text();
 
-          const match = markdown.match(/# Vertex 3 Announcements[\\s\\S]*?(?=\\n# |$)/i);
-          const announcement = match ? match[0].replace(/^# Vertex 3 Announcements\\s*/i, '').trim() : '';
+          const match = markdown.match(/# Vertex 3 Announcements[\s\S]*?(?=\n# |$)/i);
+          const announcement = match ? match[0].replace(/^# Vertex 3 Announcements\s*/i, '').trim() : '';
 
           if (!announcement) {
             content.innerHTML = '<p>No announcements right now.</p>';
@@ -109,8 +109,8 @@
           }
 
           content.innerHTML = announcement
-            .replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')
-            .replace(/\\n/g, '<br>');
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\n/g, '<br>');
         } catch (error) {
           console.error(error);
           content.innerHTML = '<p>Could not load announcements right now. Please try again later.</p>';
