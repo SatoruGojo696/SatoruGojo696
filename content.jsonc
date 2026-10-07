@@ -1307,7 +1307,7 @@
     },
     {
       "name": "Taoyuan",
-      "icon": "https://raw.githubusercontent.com/SatoruGojo696/taoyuan/main/images/logo.png",
+      "icon": "icon/taoyuan.png",
       "url": "https://satorugojo696.github.io/taoyuan/",
       "new": "true"
     },
