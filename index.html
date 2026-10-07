@@ -62,9 +62,6 @@
       <button class="site-tool-button" id="announcementsButton" type="button" aria-label="Open Announcements">
         📢 Announcements
       </button>
-      <button class="site-tool-button" id="backgroundButton" type="button" aria-label="Change Site Background">
-        🖼️ Background
-      </button>
       <a class="locked-games-button" href="locked-games/" aria-label="Open Locked Games">
         🔒 Locked Games
       </a>
@@ -72,23 +69,7 @@
 
     <div class="games-container" id="games"></div>
 
-    <div class="background-overlay" id="backgroundOverlay" hidden>
-      <div class="background-modal" role="dialog" aria-modal="true" aria-labelledby="backgroundTitle">
-        <button class="announcement-close" id="backgroundClose" type="button" aria-label="Close background settings">×</button>
-        <h2 id="backgroundTitle">🖼️ Site Background</h2>
-        <p class="background-help">Enter the path to an image in your <code>icon/</code> folder.</p>
-        <div class="background-input-row">
-          <input id="backgroundInput" type="text" placeholder="icon/AndysAppleFarm.png" autocomplete="off" spellcheck="false">
-          <button id="backgroundApply" type="button">Apply</button>
-        </div>
-        <div class="background-actions">
-          <button id="backgroundClear" type="button">Clear Background</button>
-        </div>
-        <p class="background-status" id="backgroundStatus"></p>
-      </div>
-    </div>
-
-    <div class="announcement-overlay" id="announcementOverlay">
+    <div class="announcement-overlay id="announcementOverlay">
       <div class="announcement-modal" role="dialog" aria-modal="true" aria-labelledby="announcementTitle">
         <button class="announcement-close" id="announcementClose" type="button" aria-label="Close announcements">×</button>
         <h2 id="announcementTitle">📢 Vertex 3 Announcements ➡READ ME!!⬅</h2>
