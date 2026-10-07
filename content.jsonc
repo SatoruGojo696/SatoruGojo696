@@ -7,102 +7,122 @@
     {
       "name": "Amanda The Adventurer",
       "icon": "icon/AmandaTheAdventurer.webp",
-      "url": "games/amanda-the-adventurer/"
+      "url": "games/amanda-the-adventurer/",
+      "new": "true"
     },
     {
       "name": "Andy's Apple Farm",
       "icon": "icon/AndysAppleFarm.png",
-      "url": "games/andys-apple-farm/"
+      "url": "games/andys-apple-farm/",
+      "new": "true"
     },
     {
       "name": "Baldi's Basics Plus",
       "icon": "icon/web-port.svg",
-      "url": "games/baldi-plus/"
+      "url": "games/baldi-plus/",
+      "new": "true"
     },
     {
       "name": "Baldi's Basics Classic Remastered",
       "icon": "icon/web-port.svg",
-      "url": "games/baldi-remaster/"
+      "url": "games/baldi-remaster/",
+      "new": "true"
     },
     {
       "name": "Bendy and The Ink Machine",
       "icon": "icon/web-port.svg",
-      "url": "games/bendy/"
+      "url": "games/bendy/",
+      "new": "true"
     },
     {
       "name": "BERGENTRUCK 201x",
       "icon": "icon/web-port.svg",
-      "url": "games/bergentruck/"
+      "url": "games/bergentruck/",
+      "new": "true"
     },
     {
       "name": "Deltatraveler",
       "icon": "icon/DeltaTraveler.webp",
-      "url": "games/deltatraveler/"
+      "url": "games/deltatraveler/",
+      "new": "true"
     },
     {
       "name": "Do NOT Take This Cat Home",
       "icon": "icon/web-port.svg",
-      "url": "games/donottakethiscathome/"
+      "url": "games/donottakethiscathome/",
+      "new": "true"
     },
     {
       "name": "Fears to Fathom: Home Alone",
       "icon": "icon/FearsToFathomHomeAlone.jpeg",
-      "url": "games/fears-to-fathom/"
+      "url": "games/fears-to-fathom/",
+      "new": "true"
     },
     {
       "name": "Happy Sheepies",
       "icon": "icon/HappySheepies.jpg",
-      "url": "games/happy-sheepies/"
+      "url": "games/happy-sheepies/",
+      "new": "true"
     },
     {
       "name": "Kindergarten 1 & 2",
       "icon": "icon/Kindergarden.jpg",
-      "url": "games/kindergarten/"
+      "url": "games/kindergarten/",
+      "new": "true"
     },
     {
       "name": "Milkman Karlson",
       "icon": "icon/milkman-karlson.svg",
-      "url": "games/milkman-karlson/"
+      "url": "games/milkman-karlson/",
+      "new": "true"
     },
     {
       "name": "Pizza Tower",
       "icon": "icon/Pizzatower.jpg",
-      "url": "games/pizza-tower/"
+      "url": "games/pizza-tower/",
+      "new": "true"
     },
     {
       "name": "RAFT",
       "icon": "icon/Raft.jpeg",
-      "url": "games/raft/"
+      "url": "games/raft/",
+      "new": "true"
     },
     {
       "name": "Slender: The Eight Pages",
       "icon": "icon/Slender.jpg",
-      "url": "games/slender/"
+      "url": "games/slender/",
+      "new": "true"
     },
     {
       "name": "Sonic.exe",
       "icon": "icon/Sonix.exe.jpg",
-      "url": "games/sonic.exe/"
+      "url": "games/sonic.exe/",
+      "new": "true"
     },
     {
       "name": "Speed Stars",
       "icon": "icon/SpeedStars.jpg",
-      "url": "games/speed-stars/"
+      "url": "games/speed-stars/",
+      "new": "true"
     },
     {
       "name": "Tattletail",
       "icon": "icon/Tattletail.jpeg",
-      "url": "games/tattletail/"
+      "url": "games/tattletail/",
+      "new": "true"
     },
     {
       "name": "That's Not My Neighbor",
       "icon": "icon/ThatsNotMyNeighbor.jpg",
-      "url": "games/thats-not-my-neighbor/"
+      "url": "games/thats-not-my-neighbor/",
+      "new": "true"
     },
     {
       "name": "The Man From the Window",
       "icon": "icon/ManFromTheWindow.avif",
-      "url": "games/the-man-in-the-window/"
+      "url": "games/the-man-in-the-window/",
+      "new": "true"
     },
     {
       "name": "Undertale Yellow",
@@ -112,61 +132,53 @@
     {
       "name": "Web Fishing",
       "icon": "icon/WebFishing.jpg",
-      "url": "games/web-fishing/"
+      "url": "games/web-fishing/",
+      "new": "true"
     },
     {
       "name": "Cut The Rope: Time Travel",
       "icon": "icon/cuttheropetimetravel.png",
       "url": "games/cuttheropetimetravel/",
-      "new": "true"
     },
     {
       "name": "Cuphead",
       "icon": "icon/cuphead.png",
       "url": "games/cuphead/",
-      "new": "true"
     },
     {
       "name": "Castlevania: Aria of Sorrow",
       "icon": "icon/castlevaniaariaofsorrow.png",
       "url": "$GBA/https://jbassard97.github.io/pragmatic-popcorn/roms/gba/Castlevania/CAS.gba",
-      "new": "true"
     },
     {
       "name": "Boxing Random",
       "icon": "icon/boxingrandom.png",
       "url": "games/boxingrandom/",
-      "new": "true"
     },
     {
       "name": "Basketball Stars",
       "icon": "icon/basketballstars.png",
       "url": "games/basketballstars/",
-      "new": "true"
     },
     {
       "name": "Basket Bros",
       "icon": "icon/basketbros.png",
       "url": "https://basketballbros.org/game/basket-bros/",
-      "new": "true"
     },
     {
       "name": "Achievement Unlocked 3",
       "icon": "icon/achievementunlocked3.png",
       "url": "$FLASH/https://rawcdn.githack.com/BinBashBanana/gstore/77d8f30a366b62f3e8e3cbe750b4bffe0031d53b/achievementunlocked3.swf",
-      "new": "true"
     },
     {
       "name": "Achievement Unlocked 2",
       "icon": "icon/achievementunlocked2.png",
       "url": "$FLASH/https://rawcdn.githack.com/BinBashBanana/gstore/77d8f30a366b62f3e8e3cbe750b4bffe0031d53b/achievementunlocked2.swf",
-      "new": "true"
     },
     {
       "name": "Achievement Unlocked",
       "icon": "icon/achievementunlocked.png",
       "url": "$FLASH/https://28jjjjackson.github.io/flash_achievementunlocked.swf",
-      "new": "true"
     },
     {
       "name": "WildFire",
@@ -1071,7 +1083,8 @@
     {
       "name": "Kitsune",
       "icon": "icon/Question.jpg",
-      "url": "games/google-kitsune"
+      "url": "games/google-kitsune",
+      "new": "true"
     },
     {
       "name": "Coffin of Andrew and Leyley",
@@ -1086,7 +1099,8 @@
     {
       "name": "Fnf",
       "icon": "icon/FNAF,imgae.png",
-      "url": "https://github.com/realDunkin/fnfmegapack-html5-test"
+      "url": "https://github.com/realDunkin/fnfmegapack-html5-test",
+      "new": "true"
     },
     {
       "name": "My Femboy Roomate",
@@ -1162,7 +1176,6 @@
       "name": "Papa's Freezeria",
       "icon": "icon/papasfreezeria.png",
       "url": "games/papas-freezeria/",
-      "new": "true"
     },
     {
       "name": "Papa's Pancakeria",
@@ -1192,7 +1205,6 @@
       "name": "Papa's Sushiria",
       "icon": "icon/papassushiria.png",
       "url": "games/papas-sushiria/",
-      "new": "true"
     },
     {
       "name": "Run 2",
@@ -1228,27 +1240,30 @@
       "name": "Undertale",
       "icon": "icon/undertale.png",
       "url": "games/undertale/",
-      "new": "true"
     },
     {
       "name": "Clicker Heroes",
       "icon": "icon/web-port.svg",
-      "url": "games/clickerheroes/"
+      "url": "games/clickerheroes/",
+      "new": "true"
     },
     {
       "name": "Connections",
       "icon": "icon/Connections.png",
-      "url": "games/connections/"
+      "url": "games/connections/",
+      "new": "true"
     },
     {
       "name": "Gladihoppers",
       "icon": "icon/gladihoppers.png",
-      "url": "games/gladihoppers/"
+      "url": "games/gladihoppers/",
+      "new": "true"
     },
     {
       "name": "Murder",
       "icon": "icon/Murder.webp",
-      "url": "games/murder/"
+      "url": "games/murder/",
+      "new": "true"
     },
     {
       "name": "Slime Rancher",
@@ -1278,19 +1293,16 @@
       "name": "Class of '09",
       "icon": "icon/web-port.svg",
       "url": "games/class-of-09/",
-      "new": "true"
     },
     {
       "name": "BLOODMONEY!",
       "icon": "icon/web-port.svg",
       "url": "games/bloodmoney/",
-      "new": "true"
     },
     {
       "name": "Buckshot Roulette",
       "icon": "icon/web-port.svg",
       "url": "games/buckshot-roulette/",
-      "new": "true"
     },
     {
       "name": "Karlson",
@@ -1308,7 +1320,6 @@
       "name": "Yandere Simulator",
       "icon": "icon/web-port.svg",
       "url": "games/yandere-simulator/",
-      "new": "true"
     }
   ]
 }
