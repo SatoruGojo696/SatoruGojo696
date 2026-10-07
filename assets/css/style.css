@@ -361,17 +361,28 @@ svg {
 .game-card { position:relative; }
 
 
-/* Custom site background */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.62)), var(--vertex-background-image, none);
+/* ================================
+   CUSTOM SITE BACKGROUND
+   Change ONLY the URL below.
+
+   Black background:
+   --vertex-background-image: none;
+
+   Image background:
+   --vertex-background-image: url("https://example.com/your-image.jpg");
+
+   The image appears behind the main game area,
+   NOT behind the top navigation bar.
+   ================================ */
+:root {
+    --vertex-background-image: none;
+}
+
+main {
+    background-color: #121212;
+    background-image: var(--vertex-background-image);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-
