@@ -4,7 +4,7 @@ This folder is a separate section for games you want to keep behind a 4-digit co
 
 ## Access code
 
-The default code is **4827**.
+The default code is **####**.
 
 Change it near the top of `locked-games/index.html`:
 
