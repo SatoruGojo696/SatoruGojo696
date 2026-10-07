@@ -120,8 +120,18 @@ window.Vertex3.LoadGame = (url, gameName, nav) => loadGame(url, gameName, nav);
 // Custom site background is controlled only through src/site-config.js.
 function applySiteBackground() {
     const path = String(SITE_BACKGROUND || '').trim().replace(/\\/g, '/').replace(/^\//, '');
-    if (!path || !path.startsWith('icon/')) return;
-    document.body.style.setProperty('--vertex-background-image', `url("${path.replace(/"/g, '%22')}")`);
+    const main = document.querySelector('main');
+
+    if (!main || !path || !path.startsWith('icon/')) return;
+
+    // Apply the image directly to <main> so the relative path is resolved
+    // from the site root, not from assets/css/style.css.
+    main.style.backgroundColor = 'transparent';
+    main.style.backgroundImage = `url("${path.replace(/"/g, '%22')}")`;
+    main.style.backgroundPosition = 'center';
+    main.style.backgroundSize = 'cover';
+    main.style.backgroundRepeat = 'no-repeat';
+    main.style.backgroundAttachment = 'fixed';
 }
 
 applySiteBackground();
