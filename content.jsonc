@@ -1305,5 +1305,11 @@
       "url": "games/yandere-simulator/",
       "new": "true"
     }
+    {
+      "name": "Taoyuan",
+      "icon": "https://raw.githubusercontent.com/SatoruGojo696/taoyuan/main/images/logo.png",
+      "url": "https://satorugojo696.github.io/taoyuan/",
+      "new": "true"
+    },
   ]
 }
