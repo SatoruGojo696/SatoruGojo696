@@ -980,11 +980,6 @@ wonderfull
       "url": "$FLASH/bloonssupermonkey.swf"
     },
     {
-      "name": "Bloxorz",
-      "icon": "icon/bloxorz.png",
-      "url": "$FLASH/bloxors.swf"
-    },
-    {
       "name": "Bubble Shooter",
       "icon": "icon/bubbleshooter.png",
       "url": "$FLASH/bubbleshooter.swf"
