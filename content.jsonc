@@ -41,7 +41,7 @@
     },
     {
       "name": "Do NOT Take This Cat Home",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/DoNOTTakeThisCatHome.png",
       "url": "games/donottakethiscathome/"
     },
     {
@@ -1113,19 +1113,19 @@
     },
     {
       "name": "Duck Life 1",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/DuckLife1.webp",
       "url": "games/duck-life-1/",
       "new": "true"
     },
     {
       "name": "Hextris",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/Hextris.webp",
       "url": "games/hextris/",
       "new": "true"
     },
     {
       "name": "Learn to Fly",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/LearnToFly.jpeg",
       "url": "games/learn-to-fly/",
       "new": "true"
     },
@@ -1137,19 +1137,19 @@
     },
     {
       "name": "Papa's Burgeria",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/PapasBurgeria.png",
       "url": "games/papas-burgeria/",
       "new": "true"
     },
     {
       "name": "Papa's Cheeseria",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/PapasCheeseria.png",
       "url": "games/papas-cheeseria/",
       "new": "true"
     },
     {
       "name": "Papa's Cupcakeria",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/PapasCupcakeria.png",
       "url": "games/papas-cupcakeria/",
       "new": "true"
     },
@@ -1161,7 +1161,7 @@
     },
     {
       "name": "Papa's Pancakeria",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/PapasPanCakeria.png",
       "url": "games/papas-pancakeria/",
       "new": "true"
     },
@@ -1173,13 +1173,13 @@
     },
     {
       "name": "Papa's Pizzeria",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/PapasPizzeria.png",
       "url": "games/papas-pizzeria/",
       "new": "true"
     },
     {
       "name": "Papa's Scooperia",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/PapasScooperia.jpeg",
       "url": "games/papas-scooperia/",
       "new": "true"
     },
@@ -1191,7 +1191,7 @@
     },
     {
       "name": "Run 2",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/Run2.jpg",
       "url": "games/run-2/",
       "new": "true"
     },
@@ -1203,7 +1203,7 @@
     },
     {
       "name": "The Impossible Quiz",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/TheImpossibleQuiz.avif",
       "url": "games/impossible-quiz/",
       "new": "true"
     },
@@ -1277,7 +1277,7 @@
     },
     {
       "name": "BLOODMONEY!",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/BloodMoney.webp",
       "url": "games/bloodmoney/",
       "new": "true"
     },
