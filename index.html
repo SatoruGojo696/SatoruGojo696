@@ -69,7 +69,7 @@
 
     <div class="games-container" id="games"></div>
 
-    <div class="announcement-overlay id="announcementOverlay">
+    <div class="announcement-overlay" id="announcementOverlay" hidden>
       <div class="announcement-modal" role="dialog" aria-modal="true" aria-labelledby="announcementTitle">
         <button class="announcement-close" id="announcementClose" type="button" aria-label="Close announcements">×</button>
         <h2 id="announcementTitle">📢 Vertex 3 Announcements ➡READ ME!!⬅</h2>
@@ -97,9 +97,7 @@
         content.innerHTML = '<p>Loading announcements...</p>';
 
         try {
-          const response = await fetch(
-            'https://raw.githubusercontent.com/SatoruGojo696/SatoruGojo696/main/README.md?cache=' + Date.now()
-          );
+          const response = await fetch('./README.md?cache=' + Date.now(), { cache: 'no-store' });
           if (!response.ok) throw new Error('Failed to load README');
           const markdown = await response.text();
 
@@ -125,7 +123,7 @@
       };
 
       button.addEventListener('click', openAnnouncements);
-      openAnnouncements();
+      closeAnnouncements();
       close.addEventListener('click', closeAnnouncements);
       ok.addEventListener('click', closeAnnouncements);
       overlay.addEventListener('click', event => {
