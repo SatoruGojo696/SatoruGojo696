@@ -1084,11 +1084,6 @@
       "url": "https://github.com/realDunkin/fnfmegapack-html5-test"
     },
     {
-      "name": "My Femboy Roomate",
-      "icon": "icon/myfemboyroomate.png",
-      "url": "games/myfemboyroomate"
-    },
-    {
       "name": "Minecraft 1.12.2",
       "icon": "icon/eaglercraft1.12.png",
       "url": "games/eaglercraft1.12/"
@@ -1252,12 +1247,6 @@
       "new": "true"
     },
     {
-      "name": "Slime Rancher (Decompiled)",
-      "icon": "icon/SlimeRancher.jpeg",
-      "url": "games/slime-ranchers/",
-      "new": "true"
-    },
-    {
       "name": "Plants vs. Zombies: Fusion",
       "icon": "icon/pvzfusion.svg",
       "url": "games/pvz-fusion/",
@@ -1270,24 +1259,6 @@
       "new": "true"
     },
     {
-      "name": "Class of '09",
-      "icon": "icon/ClassOf09.jpeg",
-      "url": "games/class-of-09/",
-      "new": "true"
-    },
-    {
-      "name": "BLOODMONEY!",
-      "icon": "icon/BloodMoney.webp",
-      "url": "games/bloodmoney/",
-      "new": "true"
-    },
-    {
-      "name": "Buckshot Roulette",
-      "icon": "icon/web-port.svg",
-      "url": "games/buckshot-roulette/",
-      "new": "true"
-    },
-    {
       "name": "Karlson",
       "icon": "icon/MIlkManKarlson.jpg",
       "url": "games/karlson/",
@@ -1297,12 +1268,6 @@
       "name": "OMORI (Fixed)",
       "icon": "icon/Omori.jpeg",
       "url": "games/omori-fixed/",
-      "new": "true"
-    },
-    {
-      "name": "Yandere Simulator",
-      "icon": "icon/YandereSim.png",
-      "url": "games/yandere-simulator/",
       "new": "true"
     },
     {
