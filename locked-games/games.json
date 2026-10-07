@@ -6,46 +6,46 @@
   },
   {
       "name": "Coffin of Andrew and Leyley",
-      "icon": "icon/thecoffinofandyandleyley.png",
+      "icon": "../Locked-games/Icons-Locked/thecoffinofandyandleyley.png",
       "url": "games/thecoffinofandyandleyley"
   },
   {
       "name": "My Femboy Roomate",
-      "icon": "locked-games/Icons-Locked/MFR.png",
+      "icon": "../locked-games/Icons-Locked/MFR.png",
       "url": "games/myfemboyroomate"
   },
   {
       "name": "Buckshot Roulette",
-      "icon": "locked-games/Icons-Locked/BuckShot.jpg",
+      "icon": "../locked-games/Icons-Locked/BuckShot.jpg",
       "url": "games/buckshot-roulette/",
       "new": "true"
   },
   {
       "name": "BLOODMONEY!",
-      "icon": "locked-games/Icons-Locked/BloodMoney.webp",
+      "icon": "../locked-games/Icons-Locked/BloodMoney.webp",
       "url": "games/bloodmoney/",
       "new": "true"
   },
   {
       "name": "Class of '09",
-      "icon": "locked-games/Icons-Locked/ClassOf09.jpeg",
+      "icon": "../locked-games/Icons-Locked/ClassOf09.jpeg",
       "url": "games/class-of-09/",
       "new": "true"
   },
   {
       "name": "ULTRAKILL",
-      "icon": "locked-games/Icons-Locked/UltraKill.png",
+      "icon": "../locked-games/Icons-Locked/UltraKill.png",
       "url": "games/ultrakill/"
   },
   {
       "name": "Yandere Simulator",
-      "icon": "locked-games/Icons-Locked/YandereSim.png",
+      "icon": "../locked-games/Icons-Locked/YandereSim.png",
       "url": "games/yandere-simulator/",
       "new": "true"
   },
   {
     "name": "Witch's Heart",
-    "icon": "locked-games/Icons-Locked/WhitchesHeart.webp",
+    "icon": "../locked-games/Icons-Locked/WhitchesHeart.webp",
     "url": "games/witch-heart/"
   }
 ]
