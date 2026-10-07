@@ -351,3 +351,11 @@ svg {
 .announcement-ok:hover {
     background: #373737;
 }
+
+
+.favorites-button { display:inline-flex; align-items:center; justify-content:center; padding:9px 16px; margin-right:12px; border-radius:40px; border:1px solid #37343421; background:#1e1e1e; color:#ffffffd3; font-family:'Baloo Thambi 2'; font-size:1em; cursor:pointer; transition:transform .2s ease, background .2s ease; }
+.favorites-button:hover, .favorites-button.active { transform:translateY(-2px); background:#292929; }
+.favorite-button { position:absolute; top:7px; right:7px; z-index:3; width:34px; height:34px; border:0; border-radius:50%; background:rgba(0,0,0,.58); color:white; font-size:22px; line-height:1; cursor:pointer; transition:transform .2s ease, background .2s ease; }
+.favorite-button:hover { transform:scale(1.12); background:rgba(0,0,0,.78); }
+.favorite-button.favorited { color:#ffd84d; }
+.game-card { position:relative; }
