@@ -16,22 +16,22 @@
     },
     {
       "name": "Baldi's Basics Plus",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/BaldisBasicClassic.jpg",
       "url": "games/baldi-plus/"
     },
     {
       "name": "Baldi's Basics Classic Remastered",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/BaldisBasicsClassic.webp",
       "url": "games/baldi-remaster/"
     },
     {
       "name": "Bendy and The Ink Machine",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/Bendy.jpeg",
       "url": "games/bendy/"
     },
     {
       "name": "BERGENTRUCK 201x",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/BergenTruck.jpg",
       "url": "games/bergentruck/"
     },
     {
@@ -1107,7 +1107,7 @@
     },
     {
       "name": "Chrome Dino",
-      "icon": "",
+      "icon": "icon/ChromeDino.png",
       "url": "games/chrome-dino/",
       "new": "true"
     },
@@ -1131,7 +1131,7 @@
     },
     {
       "name": "Learn to Fly 3",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/LearnToFly3.webp",
       "url": "games/learn-to-fly-3/",
       "new": "true"
     },
@@ -1167,7 +1167,7 @@
     },
     {
       "name": "Papa's Pastaria",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/PapasPasteria.jpeg",
       "url": "games/papas-pastaria/",
       "new": "true"
     },
@@ -1197,7 +1197,7 @@
     },
     {
       "name": "Flappy Birb",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/FlappyBird.webp",
       "url": "games/flappy-birb/",
       "new": "true"
     },
@@ -1209,13 +1209,13 @@
     },
     {
       "name": "Riddle School 1",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/Riddle1.webp",
       "url": "games/riddle-school-1/",
       "new": "true"
     },
     {
       "name": "Riddle School 2",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/Riddle2.jpeg",
       "url": "games/riddle-school-2/",
       "new": "true"
     },
@@ -1227,7 +1227,7 @@
     },
     {
       "name": "Clicker Heroes",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/ClickerHeros.jpg",
       "url": "games/clickerheroes/"
     },
     {
@@ -1301,7 +1301,7 @@
     },
     {
       "name": "Yandere Simulator",
-      "icon": "icon/web-port.svg",
+      "icon": "icon/YandereSim.png",
       "url": "games/yandere-simulator/",
       "new": "true"
     }
