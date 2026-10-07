@@ -53,15 +53,82 @@
         <option value="launches">Most Played</option>
       </select>
 
+      <button class="site-tool-button" id="announcementsButton" type="button" aria-label="Open Announcements">
+        📢 Announcements
+      </button>
       <a class="locked-games-button" href="locked-games/" aria-label="Open Locked Games">
         🔒 Locked Games
       </a>
     </div>
 
     <div class="games-container" id="games"></div>
+
+    <div class="announcement-overlay" id="announcementOverlay" hidden>
+      <div class="announcement-modal" role="dialog" aria-modal="true" aria-labelledby="announcementTitle">
+        <button class="announcement-close" id="announcementClose" type="button" aria-label="Close announcements">×</button>
+        <h2 id="announcementTitle">📢 Vertex 3 Announcements</h2>
+        <div class="announcement-content" id="announcementContent">
+          <p>Loading announcements...</p>
+        </div>
+        <button class="announcement-ok" id="announcementOk" type="button">OK</button>
+      </div>
+    </div>
     <div class="pagination" id="pagination"></div>
   </main>
   <script src="src/main.js" type="module" defer></script>
+  <script>
+    (() => {
+      const button = document.getElementById('announcementsButton');
+      const overlay = document.getElementById('announcementOverlay');
+      const content = document.getElementById('announcementContent');
+      const close = document.getElementById('announcementClose');
+      const ok = document.getElementById('announcementOk');
+
+      if (!button || !overlay || !content || !close || !ok) return;
+
+      const openAnnouncements = async () => {
+        overlay.hidden = false;
+        content.innerHTML = '<p>Loading announcements...</p>';
+
+        try {
+          const response = await fetch(
+            'https://raw.githubusercontent.com/SatoruGojo696/SatoruGojo696/main/README.md?cache=' + Date.now()
+          );
+          if (!response.ok) throw new Error('Failed to load README');
+          const markdown = await response.text();
+
+          const match = markdown.match(/# Vertex 3 Announcements[\\s\\S]*?(?=\\n# |$)/i);
+          const announcement = match ? match[0].replace(/^# Vertex 3 Announcements\\s*/i, '').trim() : '';
+
+          if (!announcement) {
+            content.innerHTML = '<p>No announcements right now.</p>';
+            return;
+          }
+
+          content.innerHTML = announcement
+            .replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')
+            .replace(/\\n/g, '<br>');
+        } catch (error) {
+          console.error(error);
+          content.innerHTML = '<p>Could not load announcements right now. Please try again later.</p>';
+        }
+      };
+
+      const closeAnnouncements = () => {
+        overlay.hidden = true;
+      };
+
+      button.addEventListener('click', openAnnouncements);
+      close.addEventListener('click', closeAnnouncements);
+      ok.addEventListener('click', closeAnnouncements);
+      overlay.addEventListener('click', event => {
+        if (event.target === overlay) closeAnnouncements();
+      });
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && !overlay.hidden) closeAnnouncements();
+      });
+    })();
+  </script>
 </body>
 
 </html>
