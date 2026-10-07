@@ -112,18 +112,20 @@
           }
 
           const markdown = await response.text();
-          const match = markdown.match(
-            /^# Vertex 3 Announcements[\\s\\S]*?(?=^# |$)/im
-          );
+          const heading = '# Vertex 3 Announcements';
+          const headingIndex = markdown.toLowerCase().indexOf(heading.toLowerCase());
 
-          if (!match) {
+          if (headingIndex === -1) {
             content.innerHTML = '<p>No announcements right now.</p>';
             return;
           }
 
-          const announcement = match[0]
-            .replace(/^# Vertex 3 Announcements\\s*/i, '')
-            .trim();
+          const afterHeading = markdown.slice(headingIndex + heading.length);
+          const nextHeading = afterHeading.search(/\n# /);
+          const announcement = (nextHeading === -1
+            ? afterHeading
+            : afterHeading.slice(0, nextHeading)
+          ).trim();
 
           if (!announcement) {
             content.innerHTML = '<p>No announcements right now.</p>';
@@ -134,8 +136,8 @@
             .replace(/&/g, '&amp;')
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;')
-            .replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')
-            .replace(/\\n/g, '<br>');
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\n/g, '<br>');
         } catch (error) {
           console.error('Announcements:', error);
           content.innerHTML =
