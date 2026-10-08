@@ -28,6 +28,7 @@ export function loadGame(url, gameName, nav) {
     if (!iframe) {
         iframe = document.createElement('iframe');
         iframe.id = 'vertex-iframe';
+        iframe.tabIndex = 0;
         Object.assign(iframe.style, {
             position: 'fixed',
             top: nav.offsetHeight + 'px',
@@ -39,12 +40,15 @@ export function loadGame(url, gameName, nav) {
             backgroundColor: 'white'
         });
         iframe.setAttributeNS(null, 'allow', 'autoplay; fullscreen *; cross-origin-isolated');
+        // Keep keyboard-controlled games focused when they are opened.
+        iframe.addEventListener('pointerdown', () => iframe.focus());
         document.body.appendChild(iframe);
     } else {
         iframe.remove();
         document.body.appendChild(iframe);
     }
     iframe.textContent = 'Loading game...';
+    iframe.dataset.gameName = gameName;
 
     // inject css tags and scripts if a game needs it
     function Inject(doc, gameUrl) {
@@ -116,7 +120,10 @@ export function loadGame(url, gameName, nav) {
             .then(html => {
                 if (url.startsWith('https://')) html = html.replace(/<head>/i, `<head><base href="${url}">`);
                 iframe.srcdoc = html;
-                iframe.onload = () => Inject(iframe.contentDocument, url);
+                iframe.onload = () => {
+                    Inject(iframe.contentDocument, url);
+                    iframe.focus();
+                };
             });
     }
 }
