@@ -5,6 +5,11 @@
     "url": "games/yume-nikki/"
   },
   {
+    "name": "Aurora",
+    "icon": "../locked-games/Icons-Locked/Screenshot 2026-10-08 11.43.13 AM.png",
+    "url": "https://mental-os.github.io/Aurora-OS.js/"
+  },
+  {
       "name": "Coffin of Andrew and Leyley",
       "icon": "../locked-games/Icons-Locked/Coffin.png",
       "url": "games/thecoffinofandyandleyley"
