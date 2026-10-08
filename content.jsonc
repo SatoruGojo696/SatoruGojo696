@@ -1108,6 +1108,11 @@ wonderfull
       "new": "true"
     },
     {
+      "name": "Dinosaur Game 2",
+      "icon": "icon/ChromeDino.png",
+      "url": "games/dinosaur-game-2/"
+    },
+    {
       "name": "Duck Life 1",
       "icon": "icon/DuckLife1.webp",
       "url": "games/duck-life-1/",
