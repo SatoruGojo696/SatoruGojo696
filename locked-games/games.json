@@ -4,6 +4,11 @@
     "icon": "../icon/YumeNikki.jpeg",
     "url": "games/yume-nikki/"
   },
+   {
+    "name": "Black Ops 1",
+    "icon": "../locked-games/Icons-Locked/BO1.jpg",
+    "url": "http://vel.gg/bo1z"
+  },
   {
     "name": "Aurora",
     "icon": "../locked-games/Icons-Locked/Screenshot 2026-10-08 11.43.13 AM.png",
