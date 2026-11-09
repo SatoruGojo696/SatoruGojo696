@@ -74,10 +74,15 @@ wonderfull
       "name": "Pizza Tower",
       "icon": "icon/Pizzatower.jpg",
       "url": "games/pizza-tower/"
+    },   
+    {
+      "name": "The binding of issac, Repatence",
+      "icon": "icon/Pizzatower.jpg",
+      "url": "https://satorugojo696.github.io/the-browsing-of-isaac/"
     },
     {
       "name": "RAFT",
-      "icon": "icon/Raft.jpeg",
+      "icon": "icon/TBOIR.jpg",
       "url": "games/raft/"
     },
     {
