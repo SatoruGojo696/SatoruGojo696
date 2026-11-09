@@ -785,11 +785,6 @@ wonderfull
       "url": "games/chess/"
     },
     {
-      "name": "Celeste PICO",
-      "icon": "icon/celestepico.png",
-      "url": "games/celestepico/index.html"
-    },
-    {
       "name": "Block Blast",
       "icon": "icon/blockblast.png",
       "url": "games/blockblast/"
@@ -848,11 +843,6 @@ wonderfull
       "name": "Friday Night Funkin: Megapack",
       "icon": "icon/fridaynightfunkinmegapack.png",
       "url": "https://realdunkin.github.io/fnfmegapack-html5-test/"
-    },
-    {
-      "name": "Eagle Ride 3D",
-      "icon": "icon/eagleride3d.png",
-      "url": "https://cedarisasigma.github.io/eag/"
     },
     {
       "name": "Eggy Car",
@@ -920,11 +910,6 @@ wonderfull
       "url": "https://cedarisasigma.github.io/clcuttherope.html"
     },
     {
-      "name": "EmulatorJS",
-      "icon": "icon/emulatorjs.png",
-      "url": "https://demo.emulatorjs.org/"
-    },
-    {
       "name": "Cheese Chompers 3D",
       "icon": "icon/cheesechompers3d.png",
       "url": "games/cheesechompers3d/"
@@ -948,11 +933,6 @@ wonderfull
       "name": "BitLife",
       "icon": "icon/bitlife.png",
       "url": "https://mackeylol.github.io/copyofmasite/Games/Bitlife/index.html"
-    },
-    {
-      "name": "Bitplanes",
-      "icon": "icon/bitplanes.png",
-      "url": "$SRChttps://medv.io/bit-planes/"
     },
     {
       "name": "Blackjack",
@@ -1122,17 +1102,6 @@ wonderfull
       "new": "true"
     },
     {
-      "name": "Chrome Dino",
-      "icon": "icon/ChromeDino.png",
-      "url": "games/chrome-dino/",
-      "new": "true"
-    },
-    {
-      "name": "Dinosaur Game 2",
-      "icon": "icon/ChromeDino.png",
-      "url": "games/dinosaur-game-2/"
-    },
-    {
       "name": "Duck Life 1",
       "icon": "icon/DuckLife1.webp",
       "url": "games/duck-life-1/",
@@ -1273,21 +1242,9 @@ wonderfull
       "new": "true"
     },
     {
-      "name": "Plants vs. Zombies: Fusion",
-      "icon": "icon/pvzfusion.svg",
-      "url": "games/pvz-fusion/",
-      "new": "true"
-    },
-    {
       "name": "Look Outside",
       "icon": "icon/LookOutside.jpg",
       "url": "games/look-outside/",
-      "new": "true"
-    },
-    {
-      "name": "Karlson",
-      "icon": "icon/MIlkManKarlson.jpg",
-      "url": "games/karlson/",
       "new": "true"
     },
     {
