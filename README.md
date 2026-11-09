@@ -5,8 +5,13 @@ Sponsered by Vertex III
 
 Update V 02
 
+NEW-minor update .1
+Some more games were added to the site, including brotato, 60 seconds, and binding of Isaac Repetance.
+Some games that did not function were removed to free space for more, newer, larger games.
+
 New games and Announcement system added. New games will be Marked with *New* as well as being in the *new games* folder.
 New game sorting still In progress.
+
 
 Announcements will have its own tab above the games. Up on clicking, this popup will reappear so you may see updates.
 
