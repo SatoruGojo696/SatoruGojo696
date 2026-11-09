@@ -142,12 +142,6 @@ wonderfull
       "new": "true"
     },
     {
-      "name": "Cuphead",
-      "icon": "icon/cuphead.png",
-      "url": "games/cuphead/",
-      "new": "true"
-    },
-    {
       "name": "Castlevania: Aria of Sorrow",
       "icon": "icon/castlevaniaariaofsorrow.png",
       "url": "$GBA/https://jbassard97.github.io/pragmatic-popcorn/roms/gba/Castlevania/CAS.gba",
@@ -345,11 +339,6 @@ wonderfull
       "url": "games/superhot/"
     },
     {
-      "name": "Territorial.io",
-      "icon": "icon/territorialio.png",
-      "url": "games/territorialio/"
-    },
-    {
       "name": "4x4",
       "icon": "icon/4x4.png",
       "url": "games/4x4/"
@@ -513,16 +502,6 @@ wonderfull
       "name": "You VS 100",
       "icon": "icon/youvs100.png",
       "url": "https://cedarisasigma.github.io/youvs100/"
-    },
-    {
-      "name": "Crazy Kitty 3D",
-      "icon": "icon/crazykitty3d.png",
-      "url": "games/crazykitty3d/"
-    },
-    {
-      "name": "Crazy Chicken 3D",
-      "icon": "icon/crazychicken3d.png",
-      "url": "games/crazychicken3d/"
     },
     {
       "name": "Happy Wheels",
