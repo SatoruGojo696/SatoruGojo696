@@ -21,6 +21,11 @@ wonderfull
       "url": "games/baldi-plus/"
     },
     {
+      "name": "Buckshot",
+      "icon": "icon/Boyshot.webp",
+      "url": "games/buckshot-roulette"
+    },
+    {
       "name": "Baldi's Basics Classic Remastered",
       "icon": "icon/BaldisBasicsClassic.webp",
       "url": "games/baldi-remaster/"
