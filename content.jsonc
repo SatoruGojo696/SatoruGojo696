@@ -49,6 +49,16 @@ wonderfull
       "name": "Do NOT Take This Cat Home",
       "icon": "icon/DoNOTTakeThisCatHome.png",
       "url": "games/donottakethiscathome/"
+    }, 
+    {
+      "name": "Claude of duty",
+      "icon": "icon/Call of duty.png",
+      "url": "https://froydinger.github.io/claude-of-duty/"
+    },  
+    {
+      "name": "Dice a million",
+      "icon": "icon/DiceAMillion.jpeg",
+      "url": "https://github.com/NotRexed/Unblocked-Games/tree/b9a2b9ea0b5b99ebfa122155993cb62922b6250b/diceamillion"
     },
     {
       "name": "Fears to Fathom: Home Alone",
