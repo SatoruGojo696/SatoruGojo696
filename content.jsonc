@@ -69,7 +69,12 @@ wonderfull
       "name": "Kerbal Space Program",
       "icon": "icon/Kerbal.png",
       "url": "https://ksp.ishotupa.school/ksp/"
-    },  
+    },
+    {
+      "name": "Iron Lung",
+      "icon": "icon/Iron lung.jpeg",
+      "url": "https://satorugojo696.github.io/iron-lung/"
+    },
     {
       "name": "Dice a million",
       "icon": "icon/DiceAMillion.jpeg",
