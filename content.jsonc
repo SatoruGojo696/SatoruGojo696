@@ -56,6 +56,21 @@ wonderfull
       "url": "https://froydinger.github.io/claude-of-duty/"
     },  
     {
+      "name": "Kino Der Toten",
+      "icon": "icon/Kino.jpeg",
+      "url": "https://goofyahhbro69420.github.io/COD-ZOMBIES/"
+    },    
+    {
+      "name": "Hotline Miami",
+      "icon": "icon/Hotline.jpg",
+      "url": "https://github.com/genizy/web-port/tree/main/hotline-miami"
+    },      
+    {
+      "name": "Kerbal Space Program",
+      "icon": "icon/Kerbal.png",
+      "url": "https://ksp.ishotupa.school/ksp/"
+    },  
+    {
       "name": "Dice a million",
       "icon": "icon/DiceAMillion.jpeg",
       "url": "games/DiceAMillion/"
