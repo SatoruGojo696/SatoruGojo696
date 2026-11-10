@@ -369,11 +369,6 @@ wonderfull
       "url": "games/superhot/"
     },
     {
-      "name": "4x4",
-      "icon": "icon/4x4.png",
-      "url": "games/4x4/"
-    },
-    {
       "name": "Moto X3M",
       "icon": "icon/motox3m.png",
       "url": "https://motox3munblocked.github.io/"
@@ -387,11 +382,6 @@ wonderfull
       "name": "Moto X3M Pool Party",
       "icon": "icon/motox3mpoolparty.png",
       "url": "games/motox3mpoolparty/"
-    },
-    {
-      "name": "Moto X3M 3",
-      "icon": "icon/motox3m3.png",
-      "url": "games/motox3m3/"
     },
     {
       "name": "Moto X3M 2",
@@ -419,11 +409,6 @@ wonderfull
       "url": "$FLASH/papasbakeria.swf"
     },
     {
-      "name": "Counter Strike",
-      "icon": "icon/counterstrike.png",
-      "url": "games/cs/"
-    },
-    {
       "name": "Operius",
       "icon": "icon/operius.png",
       "url": "https://bitfexl.github.io/operius/"
@@ -449,19 +434,9 @@ wonderfull
       "url": "https://cedarisasigma.github.io/tunnelrush2/"
     },
     {
-      "name": "Edge Surf",
-      "icon": "icon/edgesurf.png",
-      "url": "games/edgesurf/"
-    },
-    {
       "name": "Tunnel Rush",
       "icon": "icon/tunnelrush.png",
       "url": "https://cedarisasigma.github.io/tunnelrush/"
-    },
-    {
-      "name": "Tag",
-      "icon": "icon/tag.png",
-      "url": "games/tag/"
     },
     {
       "name": "Vex X3M 2",
@@ -629,16 +604,6 @@ wonderfull
       "url": "games/flappybird/"
     },
     {
-      "name": "Tube Jumpers",
-      "icon": "icon/tubejumpers.png",
-      "url": "games/tubejumpers/"
-    },
-    {
-      "name": "Hex Empire",
-      "icon": "icon/hexempire.png",
-      "url": "$FLASH/hexempire.swf"
-    },
-    {
       "name": "Grand Roulette",
       "icon": "icon/grandroulette.png",
       "url": "$FLASH/grandroulette.swf"
@@ -667,11 +632,6 @@ wonderfull
       "name": "Poker",
       "icon": "icon/poker.png",
       "url": "$FLASH/poker.swf"
-    },
-    {
-      "name": "Plazma Burst 2",
-      "icon": "icon/plazmaburst2.png",
-      "url": "$FLASH/plazmaburst2.swf"
     },
     {
       "name": "Sierra 7",
